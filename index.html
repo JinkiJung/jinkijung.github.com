@@ -8,6 +8,9 @@
 	<head>
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-143605861-1"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -225,23 +228,26 @@ Open source, chat, and travelling around every corner of world are my favorites.
 
 						</section>
 -->
-<!--
+
 
 						<section class="wrapper style2 container special-alt">
 							<div class="row gtr-50">
 								<div class="col-8 col-12-narrower">
 
 									<header>
-										<h2><strong> A research scientist and developer </strong>; formerly an idealist, currently a realist</h2>
+										<h2>Worldwide Collaborators</h2>
 									</header>
-									<p>Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu comteger ut fermentum lorem. Lorem ipsum dolor sit amet. Sed tristique purus vitae volutpat ultrices. eu elit eget commodo. Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo.</p>
+									<center><div id="my-custom-map" style="width: 600px; height: 400px"></div></center>
+
+									<!--
 									<footer>
 										<ul class="buttons">
 											<li><a href="#" class="button">Find Out More</a></li>
 										</ul>
 									</footer>
-
+								-->
 								</div>
+								<!--
 								<div class="col-4 col-12-narrower imp-narrower">
 
 									<ul class="featured-icons">
@@ -254,10 +260,11 @@ Open source, chat, and travelling around every corner of world are my favorites.
 									</ul>
 
 								</div>
+							-->
 							</div>
 						</section>
 
-
+						<!--
 						<section class="wrapper style1 container special">
 							<div class="row">
 								<div class="col-4 col-12-narrower">
@@ -295,7 +302,7 @@ Open source, chat, and travelling around every corner of world are my favorites.
 								</div>
 							</div>
 						</section>
-						-->
+					-->
 				</article>
 
 			<!-- CTA -->
@@ -344,6 +351,9 @@ Open source, chat, and travelling around every corner of world are my favorites.
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-
+			<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+   integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+   crossorigin=""></script>
+			<script src="assets/js/worldconnection.js"></script>
 	</body>
 </html>

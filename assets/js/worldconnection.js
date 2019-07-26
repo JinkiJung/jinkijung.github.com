@@ -1,4 +1,4 @@
-var mymap = L.map('my-custom-map').setView([33.302986, 40.352783], 1);
+var mymap = L.map('my-custom-map').setView([33.302986, 40.352783], 1.7);
 
 	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
 		maxZoom: 18,
@@ -11,8 +11,8 @@ var mymap = L.map('my-custom-map').setView([33.302986, 40.352783], 1);
   var jinkiCircleIcon = {
       radius: 500,
       fillColor: "#ff7800",
-      color: "red",
-      weight: 3,
+      color: "green",
+      weight: 5,
       opacity: 1,
       fillOpacity: 0.8
   };
@@ -20,8 +20,8 @@ var mymap = L.map('my-custom-map').setView([33.302986, 40.352783], 1);
   var shipCircleIcon = {
       radius: 500,
       fillColor: "#ff7800",
-      color: "green",
-      weight: 3,
+      color: "red",
+      weight: 5,
       opacity: 1,
       fillOpacity: 0.8
   };

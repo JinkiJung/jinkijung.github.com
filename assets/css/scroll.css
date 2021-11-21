@@ -1,0 +1,179 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column;
+  }
+
+  a {
+    color:greenyellow;
+  }
+  
+  #container {
+    flex: 1;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(51,51,51,0.7);
+    z-index: 10;
+    overflow: auto;
+    /* ADD THIS TO THE PARENT */  
+    scroll-snap-type: y mandatory;
+  }
+  
+  .item {
+    /* ADD THIS TO THE CHILD */
+    scroll-snap-align: center;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    font-size: 30px;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    text-shadow:
+        2px 2px 0 #000,
+      -1px -1px 0 #000,  
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+  }
+  
+  .item-front {
+    background-color: rgb(97, 177, 223);
+    color: white;
+  }
+
+  .item-develop {
+    background-color: rgb(98, 109, 99);
+    color: white;
+  }
+
+  .item-standard {
+    background-color: rgb(13, 16, 49);
+    color: rgb(230, 180, 17);
+  }
+
+  .item-research {
+    background-color: rgb(255, 254, 214);
+    background-image: url("../../images/vr-small.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    color: rgb(59, 59, 59);
+  }
+
+  .item-paint {
+    background-color: rgb(114, 190, 118);
+    background-image: url("../../images/island-small.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    color: white;
+  }
+
+  .item-create {
+    background-color: rgb(5, 100, 95);
+    color: white;
+  }
+
+  .item-contact {
+    background-color: rgb(41, 17, 33);
+    color: rgb(238, 198, 20);
+  }
+  
+  .item-header {
+    flex: 1;
+  }
+
+  .item-body {
+    flex: 2;
+  }
+
+  .item-footer {
+    flex: 1;
+  }
+
+  .desc-headline {
+    font-size: 24px;
+    text-shadow: none;
+  }
+
+  .desc-github {
+    font-size: 20px;
+    color: gray;
+    text-shadow: none;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .desc-github p {
+    flex: 1;
+    text-align: center;
+  }
+
+  .desc-calendar {
+    max-width: 800px;
+    text-align: center;
+    background-color: white;
+  }
+
+  /* Firefox old*/
+@-moz-keyframes blink {
+  0% {
+      opacity:1;
+  }
+  50% {
+      opacity:0;
+  }
+  100% {
+      opacity:1;
+  }
+} 
+
+@-webkit-keyframes blink {
+  0% {
+      opacity:1;
+  }
+  50% {
+      opacity:0;
+  }
+  100% {
+      opacity:1;
+  }
+}
+/* IE */
+@-ms-keyframes blink {
+  0% {
+      opacity:1;
+  }
+  50% {
+      opacity:0;
+  }
+  100% {
+      opacity:1;
+  }
+} 
+/* Opera and prob css3 final iteration */
+@keyframes blink {
+  0% {
+      opacity:1;
+  }
+  50% {
+      opacity:0;
+  }
+  100% {
+      opacity:1;
+  }
+} 
+.blink-image {
+  -moz-animation: blink normal 2s infinite ease-in-out; /* Firefox */
+  -webkit-animation: blink normal 2s infinite ease-in-out; /* Webkit */
+  -ms-animation: blink normal 2s infinite ease-in-out; /* IE */
+  animation: blink normal 2s infinite ease-in-out; /* Opera and prob css3 final iteration */
+}

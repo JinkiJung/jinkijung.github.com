@@ -4,7 +4,6 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction:column;
-    font-size: 1vw;
   }
 
   a {
@@ -46,6 +45,10 @@ body {
   
   .item-front {
     background-color: rgb(97, 177, 223);
+    background-image: url("../../images/selfportrait.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
     color: white;
   }
 
@@ -100,7 +103,6 @@ body {
   }
 
   .desc-headline {
-    font-size: 1.2vw;
     text-shadow: none;
   }
 
@@ -177,3 +179,34 @@ body {
   -ms-animation: blink normal 2s infinite ease-in-out; /* IE */
   animation: blink normal 2s infinite ease-in-out; /* Opera and prob css3 final iteration */
 }
+/*
+@media (min-width: 858px) {
+  html {
+      font-size: 12px;
+  }
+}
+
+@media (min-width: 780px) {
+  html {
+      font-size: 11px;
+  }
+}
+
+@media (min-width: 702px) {
+  html {
+      font-size: 10px;
+  }
+}
+
+@media (min-width: 624px) {
+  html {
+      font-size: 9px;
+  }
+}
+
+@media (max-width: 623px) {
+  html {
+      font-size: 8px;
+  }
+}
+*/

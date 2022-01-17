@@ -42,13 +42,17 @@ body {
         -1px 1px 0 #000,
         1px 1px 0 #000;
   }
-  
-  .item-front {
-    background-color: rgb(97, 177, 223);
-    background-image: url("../../images/selfportrait.png");
+
+  .background-img {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
+    background-size: contain;
+  }
+  
+  .item-front {
+    background-color: rgb(12, 112, 170);
+    background-image: url("../../images/selfportrait.png");
     color: white;
   }
 
@@ -65,18 +69,12 @@ body {
   .item-research {
     background-color: rgb(255, 254, 214);
     background-image: url("../../images/vr-small.png");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
     color: rgb(59, 59, 59);
   }
 
   .item-paint {
     background-color: rgb(114, 190, 118);
     background-image: url("../../images/island-small.png");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
     color: white;
   }
 

@@ -27,6 +27,41 @@
 		<link rel="stylesheet" href="assets/css/noscript.css" />
 	</noscript>
 
+	<style>
+		.arrow {
+			width: 30px;
+			height: 30px;
+			border: solid white;
+			border-width: 0 3px 3px 0;
+			display: inline-block;
+			transform: rotate(45deg);
+			animation: move-down 2s ease-in-out infinite;
+		}
+		
+		@keyframes blink {
+			0% {
+			opacity: 1;
+			}
+			50% {
+			opacity: 0.5;
+			}
+			100% {
+			opacity: 1;
+			}
+		}
+		
+		@keyframes move-down {
+			0% {
+			transform: rotate(45deg) translateY(0);
+			}
+			50% {
+			transform: rotate(45deg) translateX(10px) translateY(10px);
+			}
+			100% {
+			transform: rotate(45deg) translateY(0);
+			}
+		}
+		</style>
 </head>
 
 <body class="index is-preload">
@@ -35,60 +70,72 @@
 			<!--<div>kor/eng</div>-->
 			<div class="item-header"></div>
 			<div class="item-body desc-background">
-				<H1>Hi! I am Jinki Jung</H1>
+				<H1>Hi, This is Jinki Jung!</H1>
 				<div class="desc-headline">
 					<p>I am a senior software developer of <a href="https://dmc.international/" target="_blank">DMC</a>
 						with 5 years of full-stack development in <a href="https://maritimeconnectivity.net/" target="_blank">MCP</a>
 						and <a href="https://github.com/Digital-Maritime-Consultancy" target="_blank">others</a>.</p>
-					<p>Previously I've conducted VR and AR researches for better information transfer as a Ph.D.</p>
-					<p>
-						<a href="https://raw.githubusercontent.com/JinkiJung/jinkijung.github.com/master/assets/pdf/Jinki_Curriculum_vitae_211025.pdf" target="_blank">CV in PDF</a> / <a href="https://jinkijung.github.io/online-cv/" target="_blank">online CV</a>
-					</p>
-					<p>
-						Scroll down for his story.. :0)
-					</p>
+					<p>Previously I've conducted VR and AR researches as a mean of information transfer.</p>
+					<p>In my free time, I have developed a data model 'iil', which is for work description and its consequences.</p>
+					<p>If you are interested, please find more details in the links below.</p>
+					<ul>
+						<li><a href="https://raw.githubusercontent.com/JinkiJung/jinkijung.github.com/master/assets/pdf/Jinki_Curriculum_vitae_211025.pdf" target="_blank">CV in PDF</a></li>
+						<li><a href="https://jinkijung.github.io/online-cv/" target="_blank">online CV for research and development experience</a></li>
+						<li><a href="https://jinkijung.github.io/iil-career/">Developer career page</a></li>
+						<li><a href="https://scholar.google.co.kr/citations?user=inzigzUAAAAJ&hl=en">Google scholar - research publications</a></li>
+						<li><a href="https://www.linkedin.com/in/jinkijung/?originalSubdomain=dk" target="_blank">Linkedin</a></li>
+					</ul>
+					<p>Scroll down for personal story of mine.</p>
 				</div>
 			</div>
 			<div class="item-footer">
 				<span></span><br>
-
+				<div class="arrow"></div>
 			</div>
 		</div>
 		<div class="item item-kid">
-			<div class="item-header">Scroll down for more</div>
+			<div class="item-header"></div>
 			<div class="item-body desc-background align-center">
 				<div class="desc-headline">
 					<img src="./images/Jinki-kid.png" class="jinki-image">
-					<p>This little kid in the picture had a big passion for his own space.</p>
-					<p>It was a small pond at the time, becomes a personal webpage later on,</p>
-					<p>and now the virtual world with an infinite scale!</p>
+					<p>This is younger me who had a big passion for his own space.</p>
+					<p>At that time it was a small hidden pond, from high school it became a personal webpage.</p>
+					<p>Looking back, I think I enjoyed having a space where I could freely express myself.</p>
+					<p>And that led me into the world of AR research later on.</p>
 				</div>
 			</div>
 			<div class="item-footer">
+				<span></span><br>
+				<div class="arrow"></div>
 			</div>
 		</div>
+
 		<div class="item background-img item-research">
-			<div class="item-header">Scroll down for more</div>
+			<div class="item-header"></div>
 			<div class="item-body">
 				<H1>Falling into VR/AR</H1>
-				<div class="desc-headline item-body-description">
-					<p>So it was easy for him to be hypnotized to Virtual and Augmented Reality area.</p>
-					<p>He strongly believed in the idea of utilizing VR and AR for daily life, specifically safety matters.</p>
-					<p>Most of his recent efforts has been made on the pragmatic use of the technology and its evaluation.</p>
+				<div class="desc-headline">
+					<p>I was very intrigued by Virtual and Augmented Reality area, but want to make it more practical.</p>
+					<p>That inspired me to research safety training using AR and VR and its reusability.</p>
+					<p>The picture is me at ISMAR 2018, presenting my research on safety system in the use of AR.</p>
 					<img src="./images/ismar2018.jpg" class="fit-image">
 				</div>
 			</div>
-			<div class="item-footer"><a href="https://scholar.google.co.kr/citations?user=inzigzUAAAAJ&hl=en" target="_blank">Google scholar</a>, <a href="https://www.researchgate.net/profile/Jinki-Jung" target="_blank">Researchgate</a></div>
+			<div class="item-footer">
+				<div class="arrow"></div>
+			</div>
 		</div>
+
 		<div class="item item-develop">
 			<!--<div>kor/eng</div>-->
-			<div class="item-header">Scroll down for more</div>
+			<div class="item-header"></div>
 			<div class="item-body">
-				<H1>Becoming open source developer</H1>
+				<H1>Becoming open-source developer</H1>
 				<div class="desc-headline">
-					<p>After feeling the joy of getting hands dirty, he also falled love into open source communities.</p>
-					<p>He has had a faith in open source facillitating software lifecycle.</p>
-					<p>It is a huge priviledge for him to interact with nice and brilliant people in the community like <a href="https://mcp.discourse.group/" target="_blank">MCC</a>.</p>
+					<p>I pursued a career as a developer with better practicality, and I became interested in open source.</p>
+					<p>I have had the good fortune to contribute to an experienced and active open source community</p>
+					<p>for <a href="https://maritimeconnectivity.net">the Maritime Connectivity Platform</a>.</p>
+					<p>The openness and the sharing of contributions of open source have awakened me.</p>
 				</div>
 				<div class="desc-github">
 					<p>
@@ -105,16 +152,31 @@
 						</div>
 
 						<p>
-							Jinki's Github commit overview
+							Jinki's <a href="https://github.com/jinkijung" target="_blank">Github</a> commit overview
 						</p>
 					</p>
 				</div>
 			</div>
 			<div class="item-footer">
-				<a href="https://github.com/jinkijung" target="_blank">GitHub</a>
-				<a href="https://giters.com/JinkiJung" target="_blank">Giters</a>
+				<div class="arrow"></div>
 			</div>
 		</div>
+
+		<div class="item item-standard">
+			<div class="item-header"></div>
+			<div class="item-body">
+				<H1>Life in Denmark</H1>
+				<div class="desc-headline">
+					<img src="./images/canoe.jpeg" class="fit-image">
+					<p>Another turning point of my life was moving to Denmark.</p>
+					<p>Having lived only in Korea for the rest of my life, life here has made me embark on a journey to find myself.</p>
+				</div>
+			</div>
+			<div class="item-footer">
+				<div class="arrow"></div>
+			</div>
+		</div>
+		
 		<!--
 		<div class="item item-standard">
 			<div class="item-header">Scroll down for more</div>
@@ -152,13 +214,14 @@
 			<div class="item-footer"><a href="https://tasc.readthedocs.io/en/latest/" target="_blank">Tasc description</a></div>
 		</div>
 		-->
-		<div class="item background-img item-contact">
+		<div class="item background-img item-create">
 			<div class="item-header">You've got to the bottom!</div>
 			<div class="item-body">
-				<H1>Thanks for visiting my page.</H1>
+				<H1>Thanks for reading my story.</H1>
 				<div class="desc-headline">
-					<p>You are always welcome to send a mail shown below.</p>
-					<p>If you are in Copenhagen by any chance, just ask me a cup of coffee. :0)</p>
+					<p>I am very fortunate to have the opportunity to live as myself.</p>
+					<p>I hope you who are reading this will also live the life you want.</p>
+					<p>If you are in Copenhagen by any chance, just ask me a cup of coffee by the mail below. :0)</p>
 				</div>
 			</div>
 			<div class="item-footer">your.jinki.jung (_at_) gmail.com</div>

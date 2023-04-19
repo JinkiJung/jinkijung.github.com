@@ -82,8 +82,8 @@ body {
   }
 
   .item-research {
-    background-color: rgb(255, 254, 214);
-    color: white;
+    background-color: rgb(41, 17, 33);
+    color: rgb(238, 198, 20);
   }
 
   .item-body-description {
@@ -112,8 +112,8 @@ body {
   }
 
   .item-contact {
-    background-color: rgb(41, 17, 33);
-    color: rgb(238, 198, 20);
+    background-color: rgb(255, 254, 214);
+    color: white;
   }
 
   .item-header {

@@ -28,8 +28,8 @@ export const en = {
     homePageData: {
       onePager: {
         title: "About Jinki Jung",
-        headline: "Beyond the boundaries of technology, a developer who solves the essence of problems",
-        bio: "Hello, I'm Jinki Jung. I'm a developer with 'End-to-End capabilities' who isn't confined to specific technologies to solve problems, and can take responsibility for the entire product lifecycle from front-end to deployment/operation. In my previous career chapter, I contributed to the standardization and implementation of open-source projects (Maritime Connectivity Platform), and currently, I'm focusing on the actual productization and realization of open-source.",
+        headline: "Beyond the boundaries of technology, a developer who addresses important problems",
+        bio: "Hello, I'm Jinki Jung. I'm a developer with 'End-to-End capabilities' to solve problems, and can take responsibility for the entire product lifecycle from front-end to deployment/operation. In my previous career chapter, I contributed to the standardization and implementation of open-source project (Maritime Connectivity Platform), and currently, I'm focusing on the actual realization of the open-source project.",
         competencies: [
           { title: "Affiliation", text: "Technical director at AIVeNautics" },
           { title: "Current location", text: "Daejeon, South Korea" },
@@ -37,10 +37,10 @@ export const en = {
         ]
       },
       questionGrid: {
-        initialTitle: "Sea of Questions",
-        initialSubtitle: "Move your mouse to explore clues to the answers.",
+        initialTitle: "A person with many questions",
+        initialSubtitle: "Sorry for bombarding you with questions, but..",
         foundTitle: "You've found it!",
-        foundSubtitle: "Some questions hold value simply by being asked."
+        foundSubtitle: "Isn’t it satisfying when you finally discover the answer at the end of a question?"
       },
       spectrum: {
         title: "Jinki Jung",

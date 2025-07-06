@@ -29,18 +29,18 @@ export const ko = {
       onePager: {
         title: "정진기 소개",
         headline: "기술의 경계를 넘어, <br />문제의 본질을 해결하는 개발자",
-        bio: "안녕하세요, 정진기입니다. 저는 문제를 해결하기 위해 특정 기술에 얽매이지 않고, 프론트엔드부터 배포/운영까지 제품의 전체 생명주기를 책임질 수 있는 '엔드투엔드(End-to-End) 역량'을 가진 개발자입니다. 이 전의 커리어 챕터에서는 오픈소스 프로젝트(Maritime Connectivity Platform)의 표준화 및 구현에 기여를 했고, 현재는 오픈소스의 실제 제품화 및 현실화에 집중하고 있습니다.",
+        bio: "안녕하세요, 정진기입니다. 저는 문제를 해결하기 위해 프론트엔드부터 배포/운영까지 제품의 전체 생명주기를 책임질 수 있는 '엔드투엔드(End-to-End) 역량'을 가진 개발자입니다. 이 전의 커리어 챕터에서는 오픈소스 프로젝트(Maritime Connectivity Platform)의 표준화 및 구현에 기여를 했고, 현재는 오픈소스의 실제 제품화 및 현실화에 집중하고 있습니다.",
         competencies: [
           { title: "소속", text: "AIVeNautics 기술 이사" },
           { title: "현재 위치", text: "대한민국 대전" },
-          { title: "별명", text: "오픈소스 기여자, 증강현실 연구원, 블로거" }
+          { title: "겸임", text: "오픈소스 기여자, 증강현실 연구원, 블로거" }
         ]
       },
       questionGrid: {
-        initialTitle: "질문의 바다",
-        initialSubtitle: "마우스를 움직여 해답의 실마리를 탐색해보세요.",
-        foundTitle: "찾았습니다!",
-        foundSubtitle: "어떤 질문들은 그저 질문하는 것만으로도 가치가 있습니다."
+        initialTitle: "질문이 많은 사람",
+        initialSubtitle: "궁금한게 많아서 죄송합니다만..",
+        foundTitle: "답을 찾으셨네요!",
+        foundSubtitle: "질문 속에서 해답을 찾을 때 즐겁지 않나요?"
       },
       spectrum: {
         title: "정진기",

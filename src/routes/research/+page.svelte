@@ -1,15 +1,14 @@
 
 <script>
-  import { i18nData } from '../../resources/data.js';
-  import { language } from '../../lib/stores.js';
+  import { data } from '../../lib/stores.js';
 
-  let data;
-  $: data = i18nData[$language].researchData;
+  let researchData;
+  $: researchData = $data.researchData;
 
 </script>
 
 <svelte:head>
-  <title>Jinki Jung | {data.pageHeader.title}</title>
+  <title>Jinki Jung | {researchData.pageHeader.title}</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap');
@@ -19,18 +18,18 @@
 <div class="main">
   <!-- Page Header -->
   <header class="page-header">
-    <h1 class="main-title">{data.pageHeader.title}</h1>
+    <h1 class="main-title">{researchData.pageHeader.title}</h1>
     <div class="links">
-      {#each data.pageHeader.links as link}
+      {#each researchData.pageHeader.links as link}
         <a href={link.url} target="_blank" rel="noopener noreferrer">{link.name}</a>
       {/each}
     </div>
-    <p class="description">{data.pageHeader.description}</p>
+    <p class="description">{researchData.pageHeader.description}</p>
   </header>
 
   <!-- Research Sections -->
   <div class="research-container">
-    {#each data.sections as section, i}
+    {#each researchData.sections as section, i}
       <section class="research-section">
         <div class="section-content">
           <h2 class="section-title">{section.title}</h2>
@@ -50,7 +49,7 @@
 
     <!-- Closing Section -->
     <section class="closing-section">
-      <p>{data.closing}</p>
+      <p>{researchData.closing}</p>
     </section>
   </div>
 </div>

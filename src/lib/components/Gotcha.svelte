@@ -1,10 +1,9 @@
 <script>
   import { fade } from 'svelte/transition';
-  import { i18nData } from '../../resources/data.js';
-  import { language } from '../stores.js';
+  import { data } from '../stores.js';
 
-  let data;
-  $: data = i18nData[$language].playData;
+  let playData;
+  $: playData = $data.playData;
 
   // 각 등급별 가중치 설정 (숫자가 클수록 확률이 높음)
   const rarityWeights = {
@@ -25,7 +24,7 @@
   function pullGacha() {
     // 1. 가중치에 따라 아이템이 채워진 '뽑기 통'을 만듭니다.
     const gachaPool = [];
-    data.funFacts.forEach(fact => {
+    playData.funFacts.forEach(fact => {
       const weight = rarityWeights[fact.rarity] || 1;
       for (let i = 0; i < weight; i++) {
         gachaPool.push(fact);
@@ -77,8 +76,8 @@
         </svg>
       </div>
       <div class="text-content">
-        <h1>{data.title}</h1>
-        <p>{data.subtitle}</p>
+        <h1>{playData.title}</h1>
+        <p>{playData.subtitle}</p>
       </div>
     </div>
   {/if}

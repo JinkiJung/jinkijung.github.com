@@ -1,10 +1,9 @@
 <script>
   import { onMount } from 'svelte';
-  import { i18nData } from '../../resources/data.js';
-  import { language } from '../stores.js';
+  import { data } from '../stores.js';
 
-  let data;
-  $: data = i18nData[$language].homePageData.onePager;
+  let onePagerData;
+  $: onePagerData = $data.homePageData.onePager;
 
   // 스크롤에 따라 요소가 나타나는 효과를 위한 변수
   let visible = false;
@@ -15,7 +14,7 @@
 </script>
 
 <svelte:head>
-  <title>{data.title}</title>
+  <title>{onePagerData.title}</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
     body, html {
@@ -39,17 +38,17 @@
     <div class="content-wrapper">
       <!-- 1. 헤드라인: 당신의 정체성 -->
       <h1 class="headline">
-        {@html data.headline}
+        {@html onePagerData.headline}
       </h1>
 
       <!-- 2. 소개: 당신의 스토리와 철학 -->
       <p class="bio">
-        {data.bio}
+        {onePagerData.bio}
       </p>
 
       <!-- 3. 핵심 역량: 당신이 할 수 있는 것 -->
       <div class="competencies">
-        {#each data.competencies as competency}
+        {#each onePagerData.competencies as competency}
           <div class="competency-group">
             <h3 class="group-title">{competency.title}</h3>
             <p>{competency.text}</p>

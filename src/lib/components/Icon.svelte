@@ -1,10 +1,10 @@
 <script>
-  import { icons } from '../../resources/data.js';
+  import { data } from '../stores.js';
 
   export let name;
   export let size = 24;
 
-  const path = icons[name] || '';
+  $: path = $data.icons[name] || '';
 </script>
 
 <div class="icon-wrapper" style="width: {size}px; height: {size}px;">

@@ -1,11 +1,10 @@
 <script>
   import { onMount } from 'svelte';
   import { fade } from 'svelte/transition';
-  import { i18nData } from '../../resources/data.js';
-  import { language } from '../stores.js';
+  import { data } from '../stores.js';
 
-  let data;
-  $: data = i18nData[$language].homePageData.spectrum;
+  let spectrumData;
+  $: spectrumData = $data.homePageData.spectrum;
 
   // 이미지와 텍스트의 표시 여부를 제어하는 변수
   let imageVisible = false;
@@ -26,6 +25,7 @@
       isScrolledDown = window.scrollY > 80;
     };
 
+    console.log(data);
     // ✨ 3. window에 스크롤 이벤트 리스너 추가
     window.addEventListener('scroll', handleScroll);
 
@@ -58,13 +58,13 @@
       {#if textVisible}
       <div class="text-content">
         <h1 class="overlay-text" transition:fade={{ duration: 1000 }}>
-            {data.title}
+            {spectrumData.title}
         </h1>
         <h3 
             class="sub-overlay-text" 
             transition:fade={{ duration: 1000, delay: 500 }}
           >
-            {data.subtitle}
+            {spectrumData.subtitle}
           </h3>
       </div>
         

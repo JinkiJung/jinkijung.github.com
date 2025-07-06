@@ -1,15 +1,14 @@
 
 <script>
-  import { i18nData } from '../../resources/data.js';
-  import { language } from '../../lib/stores.js';
+  import { data } from '../../lib/stores.js';
 
-  let data;
-  $: data = i18nData[$language].writeData;
+  let writeData;
+  $: writeData = $data.writeData;
 
 </script>
 
 <svelte:head>
-  <title>Jinki Jung | {data.pageHeader.title}</title>
+  <title>Jinki Jung | {writeData.pageHeader.title}</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap');
@@ -19,19 +18,19 @@
 <div class="main">
   <!-- Page Header -->
   <header class="page-header">
-    <h1 class="main-title">{data.pageHeader.title}</h1>
+    <h1 class="main-title">{writeData.pageHeader.title}</h1>
     <div class="links">
-      {#each data.pageHeader.links as link}
-        <a href={link.url} target="_blank" rel="noopener noreferrer">{link.name}</a>
+      {#each writeData.pageHeader.links as link}
+        🔗 <a href={link.url} target="_blank" rel="noopener noreferrer">{link.name}</a>
       {/each}
     </div>
-    <p class="description">{data.pageHeader.description}</p>
+    <p class="description">{writeData.pageHeader.description}</p>
   </header>
 
   <!-- Content Sections (to be populated from data.js) -->
   <div class="sections-container">
-    {#if data.sections && data.sections.length > 0}
-      {#each data.sections as section}
+    {#if writeData.sections && writeData.sections.length > 0}
+      {#each writeData.sections as section}
         <!-- You can create a new component for writing sections or use ProjectSection if it fits -->
         <!-- For now, just displaying a placeholder -->
         <section class="writing-section">

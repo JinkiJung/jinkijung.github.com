@@ -1,16 +1,15 @@
 
 <script>
   import ProjectSection from '../../lib/components/ProjectSection.svelte';
-  import { i18nData } from '../../resources/data.js';
-  import { language } from '../../lib/stores.js';
+  import { data } from '../../lib/stores.js';
 
-  let data;
-  $: data = i18nData[$language].portfolioData;
+  let portfolioData;
+  $: portfolioData = $data.portfolioData;
 
 </script>
 
 <svelte:head>
-  <title>Jinki Jung | {data.pageHeader.title}</title>
+  <title>{portfolioData.pageHeader.title}</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap');
@@ -20,18 +19,18 @@
 <div class="main">
   <!-- Page Header -->
   <header class="page-header">
-    <h1 class="main-title">{data.pageHeader.title}</h1>
+    <h1 class="main-title">{portfolioData.pageHeader.title}</h1>
     <div class="links">
-      {#each data.pageHeader.links as link}
-        <a href={link.url} target="_blank" rel="noopener noreferrer">{link.name}</a>
+      {#each portfolioData.pageHeader.links as link}
+        🔗 <a href={link.url} target="_blank" rel="noopener noreferrer">{link.name}</a>
       {/each}
     </div>
-    <p class="description">{data.pageHeader.description}</p>
+    <p class="description">{portfolioData.pageHeader.description}</p>
   </header>
 
   <!-- Project Sections -->
   <div class="sections-container">
-    {#each data.sections as section}
+    {#each portfolioData.sections as section}
       <ProjectSection {section} />
     {/each}
   </div>

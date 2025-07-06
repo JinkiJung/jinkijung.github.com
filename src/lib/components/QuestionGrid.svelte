@@ -1,11 +1,10 @@
 <script>
     import { onMount, onDestroy } from 'svelte';
     import { browser } from '$app/environment';
-    import { i18nData } from '../../resources/data.js';
-    import { language } from '../stores.js';
+    import { data } from '../stores.js';
 
-    let data;
-    $: data = i18nData[$language].homePageData.questionGrid;
+    let questionGridData;
+    $: questionGridData = $data.homePageData.questionGrid;
 
     // DOM 요소를 바인딩할 변수
     let gridElement;
@@ -43,18 +42,18 @@
         // 전구 아이콘일 때, 그리고 아직 해답을 찾지 않았을 때만 실행
         if (event.target.textContent === '💡' && !isSecretFound) {
             isSecretFound = true;
-            mainTitle = data.foundTitle;
-            mainSubtitle = data.foundSubtitle;
+            mainTitle = questionGridData.foundTitle;
+            mainSubtitle = questionGridData.foundSubtitle;
             
             // 전구를 찾으면 더 이상 클릭되지 않도록 클래스 제거
             secretQuestion.classList.remove('clickable');
         }
     }
 
-    $: if (data) {
+    $: if (questionGridData) {
       // 언어가 변경되거나 데이터가 로드될 때마다 텍스트 업데이트
-      mainTitle = data.initialTitle;
-      mainSubtitle = data.initialSubtitle;
+      mainTitle = questionGridData.initialTitle;
+      mainSubtitle = questionGridData.initialSubtitle;
       isSecretFound = false; // 언어 변경 시 비밀 상태 초기화
       // grid 재생성 (필요하다면)
       if (gridElement) {

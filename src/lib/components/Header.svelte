@@ -1,5 +1,6 @@
 <script lang="ts">
   import { page } from '$app/stores';
+  import { base } from '$app/paths';
   import LanguageSwitcher from './LanguageSwitcher.svelte';
 
   // 아이콘에 연결될 링크 (실제 주소로 변경해주세요)
@@ -21,23 +22,11 @@
 
       <!-- 메인 네비게이션 -->
       <nav>
-        <ul>
-          <li class:active={$page.url.pathname === '/'}>
-            <a href="/">Home</a>
-          </li>
-          <li class:active={$page.url.pathname === '/develop'}>
-            <a href="/develop">Develop</a>
-          </li>
-          <li class:active={$page.url.pathname === '/write'}>
-            <a href="/write">Write</a>
-          </li>
-          <li class:active={$page.url.pathname === '/research'}>
-            <a href="/research">Research</a>
-          </li>
-          <li class:active={$page.url.pathname === '/play'}>
-            <a href="/play">Play</a>
-          </li>
-        </ul>
+        <a href="{base}/" class:active={$page.url.pathname === '/'}>Home</a>
+        <a href="{base}/develop" class:active={$page.url.pathname === '/develop'}>Develop</a>
+        <a href="{base}/write" class:active={$page.url.pathname === '/write'}>Write</a>
+        <a href="{base}/research" class:active={$page.url.pathname === '/research'}>Research</a>
+        <a href="{base}/play" class:active={$page.url.pathname === '/play'}>Play</a>
       </nav>
     </div>
 
@@ -125,10 +114,7 @@
     color: #4b5563; /* gray-600 */
   }
 
-  nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  nav {
     display: flex;
     gap: 2rem; /* 메뉴 아이템 사이 간격 */
   }

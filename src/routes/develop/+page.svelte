@@ -9,7 +9,7 @@
 </script>
 
 <svelte:head>
-  <title>Jinki Jung | {portfolioData.pageHeader.title}</title>
+  <title>{portfolioData.pageHeader.title}</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap');
@@ -22,7 +22,7 @@
     <h1 class="main-title">{portfolioData.pageHeader.title}</h1>
     <div class="links">
       {#each portfolioData.pageHeader.links as link}
-        <a href={link.url} target="_blank" rel="noopener noreferrer">{link.name}</a>
+        🔗 <a href={link.url} target="_blank" rel="noopener noreferrer">{link.name}</a>
       {/each}
     </div>
     <p class="description">{portfolioData.pageHeader.description}</p>

@@ -21,7 +21,7 @@
     <h1 class="main-title">{researchData.pageHeader.title}</h1>
     <div class="links">
       {#each researchData.pageHeader.links as link}
-        <a href={link.url} target="_blank" rel="noopener noreferrer">{link.name}</a>
+        🔗 <a href={link.url} target="_blank" rel="noopener noreferrer">{link.name}</a>
       {/each}
     </div>
     <p class="description">{researchData.pageHeader.description}</p>

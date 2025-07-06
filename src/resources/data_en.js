@@ -27,7 +27,7 @@ export const en = {
     },
     homePageData: {
       onePager: {
-        title: "About Jinki Jung",
+        title: "Jinki Jung",
         headline: "Beyond the boundaries of technology, a developer who addresses important problems",
         bio: "Hello, I'm Jinki Jung. I'm a developer with 'End-to-End capabilities' to solve problems, and can take responsibility for the entire product lifecycle from front-end to deployment/operation. In my previous career chapter, I contributed to the standardization and implementation of open-source project (Maritime Connectivity Platform), and currently, I'm focusing on the actual realization of the open-source project.",
         competencies: [
@@ -50,18 +50,18 @@ export const en = {
     },
     portfolioData: {
       pageHeader: {
-        title: 'Developer Career',
+        title: 'Jinki Jung - Developer',
         links: [
             { name: 'GitHub', url: 'https://github.com/jinkijung' },
-            { name: 'LinkedIn', url: 'https://www.linkedin.com/in/jinkijung/' }
+            { name: 'MCP website', url: 'https://maritimeconnectivity.net/' }
         ],
-        description: 'A showcase of my professional journey, highlighting key projects in maritime digitalization, data-driven AI solutions, and immersive technologies. This page chronicles my hands-on experience in building and deploying robust, open-source systems from concept to production.'
+        description: 'A showcase of my professional journey, highlighting key projects in maritime digitalization, data-driven AI solutions, and immersive technologies. This page chronicles my hands-on experience in building and deploying open-source systems from concept to production.'
       },
       sections: [
         {
           chapter: 'Chapter 1: Maritime Digitalization',
           title: 'Leading Maritime Digital Transformation',
-          description: "During my tenure at DMC, I was a core developer on open-source projects centered around the Maritime Connectivity Platform. I took charge of the entire process of turning ideas into operational open-source systems, from PKI/OIDC-based authentication and service discovery to real-time messaging protocols and admin portals.",
+          description: "During my career at DMC, Denmark, I was one of core developers on open-source project, the Maritime Connectivity Platform. I took charge of the entire process of turning ideas into operational open-source systems, from PKI/OIDC-based authentication and service discovery to real-time messaging protocols and admin portals.",
           projects: [
             {
               image: 'https://placehold.co/600x400/1a1a1a/ffffff?text=MIR',
@@ -69,7 +69,7 @@ export const en = {
               description: 'A distributed PKI/OIDC-based authentication system for maritime organizations.',
               contribution: 'Maintained source code, deployed and operated based on HSM',
               tech: ['Java', 'Spring', 'Docker'],
-              links: [{ name: 'GitHub', url: 'https://github.com/MaritimeCloud/IdentityRegistry' }]
+              links: [{ name: 'GitHub', url: 'https://github.com/maritimeconnectivity/IdentityRegistry' }]
             },
             {
               image: 'https://placehold.co/600x400/1a1a1a/ffffff?text=MSR',
@@ -77,7 +77,7 @@ export const en = {
               description: 'A service discovery platform for maritime and vessel-related technical services.',
               contribution: 'Maintained source code, testing',
               tech: ['Java', 'Spring', 'JavaScript', 'PostgreSQL'],
-              links: [{ name: 'GitHub', url: 'https://github.com/MaritimeCloud/ServiceRegistry' }]
+              links: [{ name: 'GitHub', url: 'https://github.com/maritimeconnectivity/ServiceRegistry' }]
             },
             {
               image: 'https://placehold.co/600x400/1a1a1a/ffffff?text=MMS',
@@ -86,20 +86,20 @@ export const en = {
               contribution: 'Worked on standard documents, implemented MMS Agent, testing',
               tech: ['Go', 'React', 'TypeScript'],
               links: [
-                { name: 'GitHub (Front-end)', url: 'https://github.com/mc-mms/mms-frontend' },
-                { name: 'GitHub (Agent)', url: 'https://github.com/mc-mms/mms-agent' },
-                { name: 'Live Demo', url: 'http://mms.openbridge.no/' }
+                { name: 'GitHub (React Agent)', url: 'https://github.com/Team-AIVN/mms-demo-react' },
+                { name: 'GitHub (Agent)', url: 'https://github.com/Team-AIVN/mms-browser-agent' },
+                { name: 'Live Demo page', url: 'https://agent.dmc.international/' }
               ]
             },
             {
               image: 'https://placehold.co/600x400/1a1a1a/ffffff?text=Portal',
               title: 'MCP Management Portal development',
               description: 'Led front-end development and automated deployment for the MCP resource management admin portal.',
-              contribution: 'Lead Developer, GitHub Actions deployment',
+              contribution: 'Lead Developer',
               tech: ['TypeScript', 'AngularJS'],
               links: [
-                { name: 'GitHub', url: 'https://github.com/MaritimeCloud/ManagementPortal' },
-                { name: 'Web Page', url: 'https://maritimecloud.github.io/ManagementPortal/' }
+                { name: 'GitHub', url: 'https://github.com/maritimeconnectivity/ManagementPortal' },
+                { name: 'Web Page', url: 'https://maritimeconnectivity.github.io/ManagementPortal/' }
               ]
             },
             {
@@ -109,19 +109,19 @@ export const en = {
               contribution: 'Lead Developer, GitHub Actions and Readthedocs deployment',
               tech: ['Markdown'],
               links: [
-                { name: 'GitHub', url: 'https://github.com/MaritimeCloud/docs.maritimecloud.net' },
-                { name: 'Web Page', url: 'https://docs.maritimecloud.net/' }
+                { name: 'GitHub', url: 'https://github.com/maritimeconnectivity/docs.maritimeconnectivity.net' },
+                { name: 'Web Page', url: 'https://docs.maritimeconnectivity.net/' }
               ]
             },
              {
               image: 'https://placehold.co/600x400/1a1a1a/ffffff?text=MRR',
               title: 'Maritime Resource Registry (MRR) development',
               description: 'A maritime resource discovery service using MRN and versioning.',
-              contribution: 'Interface development',
+              contribution: 'Lead Interface developer',
               tech: ['TypeScript', 'React'],
               links: [
-                { name: 'GitHub', url: 'https://github.com/mc-mms/mrr-frontend' },
-                { name: 'Web Page', url: 'https://maritimecloud.github.io/MRR-frontend/' }
+                { name: "GitHub", url: 'https://github.com/Team-AIVN/mrr-portal'},
+                { name: 'Web Page', url: 'https://team-aivn.github.io/mrr-portal/' }
               ]
             }
           ]
@@ -138,8 +138,8 @@ export const en = {
               contribution: 'Lead developer',
               tech: ['TypeScript', 'React', 'Electron'],
               links: [
-                { name: 'GitHub', url: 'https://github.com/jinkijung/vott' },
-                { name: 'Public Dataset', url: 'https://moad.kr/' }
+                { name: 'GitHub', url: 'https://github.com/Team-AIVN/VoTT-MOAD' },
+                { name: 'Public Datase (Korean)', url: 'https://aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=realm&dataSetSn=175' }
               ]
             },
             {
@@ -149,8 +149,8 @@ export const en = {
               contribution: 'Lead front-end developer, Lead back-end developer',
               tech: ['TypeScript', 'React', 'Electron', 'Java', 'Spring'],
               links: [
-                { name: 'GitHub (Front-end)', url: 'https://github.com/jinkijung/iil-annotation-frontend' },
-                { name: 'GitHub (Back-end)', url: 'https://github.com/jinkijung/iil-annotation-backend' }
+                { name: 'GitHub (Front-end)', url: 'https://github.com/Team-AIVN/VoTT-dot' },
+                { name: 'GitHub (Back-end)', url: 'https://github.com/Team-AIVN/VoTT-dot-server' }
               ]
             }
           ]
@@ -167,11 +167,11 @@ export const en = {
               contribution: 'Lead developer',
               tech: ['Unity', 'CSharp'],
               links: [
-                { name: 'Paper', url: 'https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE09325988' },
-                { name: 'GitHub (Engine)', url: 'https://github.com/jinkijung/Tasc' },
-                { name: 'GitHub (Example: Crane)', url: 'https://github.com/jinkijung/Tasc-example-crane' },
-                { name: 'GitHub (Example: Maze)', url: 'https://github.com/jinkijung/Tasc-example-maze' },
-                { name: 'GitHub (Example: Stretching)', url: 'https://github.com/jinkijung/Tasc-example-stretching' }
+                { name: 'Paper', url: 'https://ieeexplore.ieee.org/document/8943763' },
+                { name: 'GitHub (Engine)', url: 'https://github.com/VirtualityForSafety/Tasc-Unity' },
+                { name: 'GitHub (Example: Crane)', url: 'https://github.com/VirtualityForSafety/CraneManipulation3D' },
+                { name: 'GitHub (Example: Maze)', url: 'https://github.com/VirtualityForSafety/MazeEscape3D' },
+                { name: 'GitHub (Example: Stretching)', url: 'https://github.com/VirtualityForSafety/StretchingExercise3D' }
               ]
             },
             {
@@ -181,8 +181,8 @@ export const en = {
               contribution: 'Lead researcher, Lead Unity developer',
               tech: ['Unity', 'CSharp'],
               links: [
-                { name: 'Paper', url: 'https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE07590815' },
-                { name: 'GitHub', url: 'https://github.com/jinkijung/Context-aware-AR' }
+                { name: 'Paper', url: 'https://ieeexplore.ieee.org/document/8613752' },
+                { name: 'GitHub', url: 'https://github.com/VirtualityForSafety/RoadTrafficSimulation3D' }
               ]
             },
             {
@@ -192,8 +192,8 @@ export const en = {
                 contribution: 'AR engine integration, performance optimization',
                 tech: ['C++', 'OpenCV'],
                 links: [
-                  { name: 'Paper 1', url: 'https://dl.acm.org/doi/abs/10.1145/2497947.2497968' },
-                  { name: 'Paper 2', url: 'https://dl.acm.org/doi/abs/10.1145/2407736.2407759' }
+                  { name: 'Paper 1', url: 'https://www.sciencedirect.com/science/article/abs/pii/S0097849312000052' },
+                  { name: 'Paper 2', url: 'https://dl.acm.org/doi/abs/10.1145/2407516.2407520' }
                 ]
               }
           ]
@@ -217,7 +217,9 @@ export const en = {
               description: "'iil' 스크립트 기반의 할 일 목록 애플리케이션으로, 풀스택으로 직접 개발하고 있습니다.",
               contribution: 'Lead developer',
               tech: ['Java', 'Spring', 'React', 'TypeScript', 'PostgreSQL'],
-              links: [{ name: 'GitHub', url: 'https://github.com/jinkijung/iil-todo' }]
+              links: [{ name: 'GitHub (front-end)', url: 'https://github.com/jinkijung/iil-todo' },
+                { name: 'GitHub (back-end)', url: 'https://github.com/JinkiJung/iil-repository'}
+              ]
             }
           ]
         }
@@ -225,43 +227,42 @@ export const en = {
     },
     researchData: {
       pageHeader: {
-        title: 'Research Career',
+        title: 'Jinki Jung - Researcher',
         links: [
-            { name: 'Google Scholar', url: 'https://scholar.google.com/citations?user=...YOUR_ID...' },
-            { name: 'Semantic Scholar', url: 'https://www.semanticscholar.org/author/YOUR_NAME/...' }
+            { name: 'Google Scholar', url: 'https://scholar.google.co.kr/citations?user=inzigzUAAAAJ&hl=en' },
+            { name: 'ResearchGate', url: 'https://www.researchgate.net/profile/Jinki-Jung' }
         ],
         description: 'An overview of my academic research focused on making immersive technologies more realistic, useful, and safe. This page details my work on skill-transfer in VR, authoring tools for AR, and balancing immersion with situational awareness.'
       },
       sections: [
         {
-          chapter: '1. Virtual Training That Transfers',
+          chapter: '1. Virtual Training',
           title: 'Virtual Training That Transfers',
-          description: 'I design VR simulators that prove their value in the real world. By measuring skill-transfer on tasks such as lifeboat launching, my work turns “VR looks cool” into “VR saves lives and money.”',
+          description: 'I developed a virtual-training system for recurring safety drills and validated its performance through real-world trials. The studies revealed that VR training eliminates on-site risk, cuts training costs significantly, and measurably boosts learning effectiveness.',
           videoId: 'fDDUtc3cxls'
         },
         {
-          chapter: '2. Authoring Tools for Everyone',
+          chapter: '2. Authoring Tools for Field Experts',
           title: 'Authoring Tools for Everyone',
-          description: 'I build interaction techniques that let anyone craft 3-D AR content on a phone or tablet. Multi-touch editing and real-time feedback turn non-experts into creators, widening the AR ecosystem.',
+          description: 'I created an authoring tool that lets any subject-matter expert reproduce their own workplace in AR. Experts can design virtual training scenarios without writing a single line of code—turning them into content creators and expanding the AR ecosystem.',
           videoId: 'LqB7HlW707o'
         },
         {
           chapter: '3. Balancing Immersion with Safety',
           title: 'Balancing Immersion with Safety',
-          description: 'Head-worn AR can blind us to real-world hazards. I quantify that trade-off and propose design principles that keep users situationally aware without breaking their sense of presence.',
+          description: 'While augmented reality can be highly immersive, that very immersion can mask real-world hazards. My study quantified this trade-off and proposed interface design principles that alert users to danger without breaking their sense of presence.',
           videoId: '3yKQtVem9bc'
         }
       ],
-      closing: 'Together, these threads form a single narrative: making virtual experiences believable, accessible, and responsible. That perspective now guides my transition from lab to industry—as a developer who still thinks like a scientist.'
+      closing: 'Looking back, my research has focused on accessibility, safety, immersion, and ease of authoring, proposing technologies that empower anyone to create virtual content and move the field forward. I validated these ideas through user studies, quantitative latency and performance tests, and stability evaluations. The experimental mindset I honed in academia remains a valuable asset in my work as a developer today.'
     },
     writeData: {
       pageHeader: {
-        title: 'Writing Portfolio',
+        title: 'Jinki Jung - Writer',
         links: [
-            { name: 'Medium', url: 'https://medium.com/@YOUR_USERNAME' },
-            { name: 'Blog', url: 'https://...YOUR_BLOG...' }
+            { name: 'Blog (Korean)', url: 'https://jinkijung.tistory.com/' }
         ],
-        description: 'A collection of my technical writings, including documentation, blog posts, and articles. This portfolio showcases my ability to communicate complex technical concepts clearly and effectively to diverse audiences.'
+        description: 'Oh dear — right now I can’t give you the full picture of myself as a writer. I only post on my blog now and then, but I hope to share something to you very soon.'
       },
       sections: [
         // Add your writing sections here

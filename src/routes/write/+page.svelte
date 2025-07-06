@@ -21,7 +21,7 @@
     <h1 class="main-title">{writeData.pageHeader.title}</h1>
     <div class="links">
       {#each writeData.pageHeader.links as link}
-        <a href={link.url} target="_blank" rel="noopener noreferrer">{link.name}</a>
+        🔗 <a href={link.url} target="_blank" rel="noopener noreferrer">{link.name}</a>
       {/each}
     </div>
     <p class="description">{writeData.pageHeader.description}</p>

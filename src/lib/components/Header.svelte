@@ -189,7 +189,7 @@
     }
 
     .left-nav {
-      gap: 1rem;
+      gap: 1.5rem;
     }
 
     nav {

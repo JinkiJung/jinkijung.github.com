@@ -64,7 +64,7 @@ export const ko = {
           description: "덴마크 DMC 재직 기간 동안 저는 Maritime Connectivity Platform을 중심으로 한 오픈소스 프로젝트의 핵심 개발자 중 하나로 참여했습니다. PKI/OIDC 기반 인증 시스템부터 서비스 검색, 실시간 메시징 프로토콜, 그리고 관리자 포털에 이르기까지, 아이디어를 실제 운영가능한 오픈소스 시스템으로 구현하는 전 과정을 책임졌습니다.",
           projects: [
             {
-              image: 'https://placehold.co/600x400/1a1a1a/ffffff?text=MIR',
+              image: './develop/mir.png',
               title: 'MCP Identity Registry (MIR) 개발',
               description: '해양 조직을 위한 PKI/OIDC 기반 분산 인증 시스템입니다.',
               contribution: '소스코드 유지보수, HSM 기반 배포 및 운영',
@@ -72,7 +72,7 @@ export const ko = {
               links: [{ name: 'GitHub', url: 'https://github.com/Maritimeconnectivity/IdentityRegistry' }]
             },
             {
-              image: 'https://placehold.co/600x400/1a1a1a/ffffff?text=MSR',
+              image: './develop/msr.png',
               title: 'MCP Service Registry (MSR) 개발',
               description: '선박 및 해양 관련 기술 서비스를 위한 서비스 디스커버리 플랫폼입니다.',
               contribution: '소스코드 유지보수, 테스트',
@@ -80,7 +80,7 @@ export const ko = {
               links: [{ name: 'GitHub', url: 'https://github.com/Maritimeconnectivity/ServiceRegistry' }]
             },
             {
-              image: 'https://placehold.co/600x400/1a1a1a/ffffff?text=MMS',
+              image: './develop/mms.png',
               title: 'Maritime Messaging Service (MMS) 개발',
               description: '실시간 해양 메시지 전송을 위한 MMTP 프로토콜 및 React 기반 시연용 웹 인터페이스입니다.',
               contribution: '표준 문서 작업, MMS Agent 구현, 테스트',
@@ -92,7 +92,7 @@ export const ko = {
               ]
             },
             {
-              image: 'https://placehold.co/600x400/1a1a1a/ffffff?text=Portal',
+              image: './develop/portal.png',
               title: 'MCP Management Portal 개발',
               description: 'MCP 자원 관리를 위한 관리 포털의 프론트엔드 개발을 리드하고 배포를 자동화했습니다.',
               contribution: '리드 개발자',
@@ -103,7 +103,7 @@ export const ko = {
               ]
             },
             {
-              image: 'https://placehold.co/600x400/1a1a1a/ffffff?text=Docs',
+              image: './develop/doc.png',
               title: 'MCP 온라인 문서화',
               description: 'MCP 컴포넌트에 대한 온라인 기술 문서 페이지입니다.',
               contribution: '리드 개발자, GitHub Actions 및 Readthedocs 배포',
@@ -114,7 +114,7 @@ export const ko = {
               ]
             },
              {
-              image: 'https://placehold.co/600x400/1a1a1a/ffffff?text=MRR',
+              image: './develop/mrr.png',
               title: 'Maritime Resource Registry (MRR) 개발',
               description: 'MRN 기반 해양 자원 레지스트리 서비스입니다.',
               contribution: '리드 인터페이스 개발자',
@@ -132,7 +132,7 @@ export const ko = {
           description: "데이터는 더 나은 결정을 내리는 핵심입니다. 저는 머신러닝 모델의 학습 데이터셋 구축을 위한 어노테이션 툴 개발부터, ML 서버와 연동되는 반자동화 어노테이션 서비스까지, 데이터 수집 및 가공 파이프라인의 효율성을 극대화하는 프로젝트를 수행했습니다.",
           projects: [
             {
-              image: 'https://placehold.co/600x400/1a1a1a/ffffff?text=MOAD',
+              image: './develop/moad.png',
               title: 'MOAD 프로젝트를 위한 어노테이션 툴 개발',
               description: '오픈소스인 VoTT에 Super-pixel 기반 어노테이션 기능을 추가하여 해양 데이터셋을 구축했습니다.',
               contribution: '리드 개발자',
@@ -143,7 +143,7 @@ export const ko = {
               ]
             },
             {
-              image: 'https://placehold.co/600x400/1a1a1a/ffffff?text=Annotation',
+              image: './develop/semi.png',
               title: '반자동 어노테이션 서비스',
               description: 'ML 서버와 연동하여, 사용자가 최소한의 포인트만 찍으면 객체를 자동으로 인식하는 효율적인 반자동 어노테이션 서비스입니다.',
               contribution: '리드 프론트엔드 개발자, 리드 백엔드 개발자',
@@ -161,7 +161,7 @@ export const ko = {
           description: "저의 개발자 커리어는 현실과 가상을 잇는 연구에서 시작되었습니다. KAIST에서 실시간 AR 엔진의 성능을 최적화했고, KRISO에서는 가상 훈련 시나리오를 쉽게 구현할 수 있는 스크립트 엔진 'Tasc'을 개발했습니다. 이 경험들은 복잡한 시스템의 근본 원리를 이해하고 새로운 기술을 탐구하는 저의 단단한 기반이 되었습니다.",
           projects: [
             {
-              image: 'https://placehold.co/600x400/1a1a1a/ffffff?text=Tasc',
+              image: './develop/tasc.png',
               title: '가상 훈련 애플리케이션 및 스크립트 엔진 (Tasc)',
               description: "Unity 엔진 위에서 작동하는 가상 훈련 시나리오 스크립트 엔진 'Tasc'과 3종의 훈련 예제 애플리케이션을 개발했습니다.",
               contribution: '리드 개발자',
@@ -175,7 +175,7 @@ export const ko = {
               ]
             },
             {
-              image: 'https://placehold.co/600x400/1a1a1a/ffffff?text=VR/AR+Safety',
+              image: './develop/safety.png',
               title: '안전을 위한 VR/AR',
               description: 'AR 사용자의 안전을 위해 시뮬레이션된 VR 환경과 딥러닝을 활용한 시각적 안전 경보 시스템을 연구 및 개발했습니다.',
               contribution: '리드 연구원, 리드 Unity 개발자',
@@ -186,7 +186,7 @@ export const ko = {
               ]
             },
             {
-                image: 'https://placehold.co/600x400/1a1a1a/ffffff?text=Mobile+AR',
+                image: './develop/mobile.png',
                 title: '실시간 추적을 통한 효율적인 모바일 AR 플랫폼',
                 description: 'KAIST 연구실에서 실시간 6-DOF 특징점 추적 기반의 모바일 AR 플랫폼 엔진 통합 및 성능 최적화를 수행했습니다.',
                 contribution: 'AR 엔진 통합, 성능 최적화',
@@ -204,7 +204,7 @@ export const ko = {
           description: "머릿속에 떠오른 아이디어를 직접 기획하고, 설계하며, 코드로 완성하는 과정은 개발자로서 가장 큰 즐거움입니다. 이 프로젝트들은 저의 호기심에서 출발했으며, 프론트엔드부터 배포까지 제품 개발의 모든 단계를 스스로 경험하며 성장할 수 있었던 소중한 결과물입니다.",
           projects: [
             {
-              image: 'https://placehold.co/600x400/1a1a1a/ffffff?text=iil',
+              image: './develop/iil.png',
               title: 'iil',
               description: "업무와 그 결과물을 표현하기 위한 고수준 스크립트 'iil'입니다.",
               contribution: '창립자, 리드 개발자',
@@ -212,7 +212,7 @@ export const ko = {
               links: [{ name: '웹 페이지', url: 'https://jinkijung.github.io/iil/' }]
             },
             {
-              image: 'https://placehold.co/600x400/1a1a1a/ffffff?text=iil-todo',
+              image: './develop/todo.png',
               title: 'iil-todo',
               description: "'iil' 스크립트 기반의 할 일 목록 애플리케이션으로, 풀스택으로 직접 개발하고 있습니다.",
               contribution: '리드 개발자',

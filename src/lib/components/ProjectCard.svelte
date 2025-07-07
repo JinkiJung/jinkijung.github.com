@@ -13,7 +13,7 @@
     <p class="project-description">{project.description}</p>
     
     <div class="contribution">
-      <span class="label">기여:</span>
+      <span class="label">Role:</span>
       <p>{project.contribution}</p>
     </div>
 

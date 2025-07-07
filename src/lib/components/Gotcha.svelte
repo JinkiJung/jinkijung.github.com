@@ -252,4 +252,33 @@
   .rarity-common .rarity-badge { background-color: var(--color-common); }
   .rarity-rare .rarity-badge { background-color: var(--color-rare); }
   .rarity-super_rare .rarity-badge { background-color: var(--color-super_rare); }
+
+  /* 모바일 반응형 */
+  @media (max-width: 768px) {
+    .gacha-page h1 {
+      font-size: clamp(1.2rem, 8vw, 2.5rem);
+    }
+    .gacha-page p {
+      font-size: clamp(0.8rem, 3vw, 1rem);
+    }
+    .fact-text {
+      font-size: clamp(1.5rem, 8vw, 3rem);
+    }
+    .rarity-badge {
+      font-size: 0.8rem;
+      padding: 0.4rem 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .gacha-page h1 {
+      font-size: clamp(1rem, 10vw, 2rem);
+    }
+    .gacha-page p {
+      font-size: clamp(0.7rem, 4vw, 0.9rem);
+    }
+    .fact-text {
+      font-size: clamp(1.2rem, 10vw, 2.5rem);
+    }
+  }
 </style>

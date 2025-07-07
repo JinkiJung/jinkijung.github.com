@@ -12,21 +12,33 @@
   };
 
   const iconSize = 10;
+  let menuOpen = false; // State for mobile menu visibility
+
+  function toggleMenu() {
+    menuOpen = !menuOpen;
+  }
 </script>
 
 <header>
   <div class="nav-container">
     <!-- 왼쪽 정렬 영역 -->
     <div class="left-nav">
+      <!-- Hamburger menu for mobile -->
+      <button class="hamburger" on:click={toggleMenu} aria-label="Toggle menu">
+        <div class="bar" class:open={menuOpen}></div>
+        <div class="bar" class:open={menuOpen}></div>
+        <div class="bar" class:open={menuOpen}></div>
+      </button>
+
       <LanguageSwitcher />
 
-      <!-- 메인 네비게이션 -->
-      <nav>
-        <a href="{base}/" class:active={$page.url.pathname === '/'}>Home</a>
-        <a href="{base}/develop" class:active={$page.url.pathname === '/develop'}>Develop</a>
-        <a href="{base}/write" class:active={$page.url.pathname === '/write'}>Write</a>
-        <a href="{base}/research" class:active={$page.url.pathname === '/research'}>Research</a>
-        <a href="{base}/play" class:active={$page.url.pathname === '/play'}>Play</a>
+      <!-- Main Navigation -->
+      <nav class:mobile-open={menuOpen}>
+        <a href="{base}/" class:active={$page.url.pathname === base + '/'}>Home</a>
+        <a href="{base}/develop" class:active={$page.url.pathname === base + '/develop'}>Develop</a>
+        <a href="{base}/write" class:active={$page.url.pathname === base + '/write'}>Write</a>
+        <a href="{base}/research" class:active={$page.url.pathname === base + '/research'}>Research</a>
+        <a href="{base}/play" class:active={$page.url.pathname === base + '/play'}>Play</a>
       </nav>
     </div>
 
@@ -168,5 +180,86 @@
   .social-icon:hover {
     color: #9ca3af; /* gray-400 */
     transform: scale(1.1);
+  }
+
+  /* 모바일 반응형 */
+  @media (max-width: 768px) {
+    .nav-container {
+      padding: 0 1rem;
+    }
+
+    .left-nav {
+      gap: 1rem;
+    }
+
+    nav {
+      display: none; /* 기본적으로 숨김 */
+      flex-direction: column;
+      position: absolute;
+      top: 4rem; /* 헤더 높이만큼 아래로 */
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.95); /* 배경색 */
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 1rem 0;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+      z-index: 999;
+    }
+
+    nav.mobile-open {
+      display: flex; /* 햄버거 메뉴 클릭 시 보임 */
+    }
+
+    nav a {
+      padding: 0.8rem 2rem;
+      width: 100%;
+      text-align: left;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    nav a:last-child {
+      border-bottom: none;
+    }
+
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 24px;
+      height: 20px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      z-index: 1001; /* 메뉴보다 위에 */
+    }
+
+    .hamburger .bar {
+      width: 100%;
+      height: 2px;
+      background-color: white;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .hamburger .bar:nth-child(1).open {
+      transform: translateY(6.5px) rotate(45deg);
+    }
+
+    .hamburger .bar:nth-child(2).open {
+      opacity: 0;
+    }
+
+    .hamburger .bar:nth-child(3).open {
+      transform: translateY(-6.5px) rotate(-45deg);
+    }
+
+    .right-nav {
+      gap: 0.8rem;
+    }
+
+    .social-icon svg {
+      width: 1rem;
+      height: 1rem;
+    }
   }
 </style>

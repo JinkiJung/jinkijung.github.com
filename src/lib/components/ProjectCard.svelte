@@ -105,4 +105,37 @@
     background-color: #4b5563; /* gray-600 */
     color: white;
   }
+
+  /* 모바일 반응형 */
+  @media (max-width: 768px) {
+    .card-content {
+      padding: 1rem;
+    }
+    .project-title {
+      font-size: 1.1rem;
+    }
+    .project-description {
+      font-size: 0.9rem;
+    }
+    .contribution {
+      font-size: 0.8rem;
+    }
+    .link-button {
+      font-size: 0.8rem;
+      padding: 0.4rem 0.8rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .project-title {
+      font-size: 1rem;
+    }
+    .project-description {
+      font-size: 0.8rem;
+    }
+    .link-button {
+      font-size: 0.7rem;
+      padding: 0.3rem 0.6rem;
+    }
+  }
 </style>

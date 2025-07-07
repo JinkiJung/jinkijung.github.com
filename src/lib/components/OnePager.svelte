@@ -182,15 +182,40 @@
     }
     .text-section {
       height: 60vh;
-      padding: 2rem;
+      padding: 1rem;
       align-items: flex-start;
       overflow-y: auto;
     }
     .headline {
-      font-size: 2rem;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
     }
     .bio {
-      font-size: 1rem;
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+    .competency-group {
+      margin-bottom: 1rem;
+    }
+    .group-title {
+      font-size: 0.9rem;
+      padding-bottom: 0.25rem;
+      margin-bottom: 0.5rem;
+    }
+    .competency-group p {
+      font-size: 0.9rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .text-section {
+      padding: 0.5rem;
+    }
+    .headline {
+      font-size: 1.2rem;
+    }
+    .bio {
+      font-size: 0.8rem;
     }
   }
 </style>

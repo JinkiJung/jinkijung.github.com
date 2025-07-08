@@ -174,6 +174,9 @@
     .page-container {
       flex-direction: column;
     }
+    .image-section {
+      display: none; /* 모바일에서 image-section 숨김 */
+    }
     .image-section, .text-section {
       width: 100%;
     }
@@ -181,7 +184,7 @@
       height: 40vh;
     }
     .text-section {
-      height: 60vh;
+      height: 100vh; /* image-section이 사라지므로 text-section이 전체 높이를 차지 */
       padding: 1rem;
       align-items: flex-start;
       overflow-y: auto;

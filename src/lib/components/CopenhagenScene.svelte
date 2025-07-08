@@ -6,6 +6,9 @@
 
   export let scrollY = 0;
   export let url: string;
+  export let startY: number;
+  export let endY: number;
+  export let text: string;
   let rotation_y: 0;
   let _position: number[] = [-30, 2, 20];
   let material: MeshStandardMaterial;
@@ -16,7 +19,7 @@
     rotation_y = scrollY*2;
     camera.update(currentCamera => {
       const radius = 30;
-      const angle = Math.PI + ((scrollY + 300) / 3000) * Math.PI; 
+      const angle = Math.PI + ((scrollY - startY + 300) / 3000) * Math.PI; 
       currentCamera.position.set( radius * Math.cos(angle), 10, -radius * Math.sin(angle));
       currentCamera.lookAt(0, 0, 0);
       return currentCamera;

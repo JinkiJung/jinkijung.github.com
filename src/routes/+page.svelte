@@ -52,7 +52,7 @@
 <style>
   main {
     position: relative;
-    min-height: 930vh;
+    min-height: 910vh;
     overflow-x: hidden;
   }
 </style>
@@ -60,14 +60,15 @@
 <main>
   <!-- 3D 배경 -->
   <Spectrum />
+  <div style="height: 300vh;"></div>
+  <div style="height: 300vh;"></div>
   {#if Copenhagen && scrollScreen >=1 && scrollScreen < 3.5}
-    <svelte:component this={Copenhagen} />
+    <svelte:component this={Copenhagen} startY={window.innerHeight} endY={window.innerHeight * 3.5} text={"Blah"}/>
   {/if}
   {#if Daejeon && scrollScreen >=3.5 && scrollScreen < 6}
-    <svelte:component this={Daejeon} />
+    <svelte:component this={Daejeon} startY={window.innerHeight*3.5} endY={window.innerHeight*6} text={"Hello"}/>
   {/if}
-  <!--<ThreeBackground {scrollPercent} />-->
   <OnePager />
-  <!-- 3D에서 2D로 전환되는 섹션 -->
+  <QuestionGrid />
   
 </main>

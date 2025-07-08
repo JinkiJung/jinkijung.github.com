@@ -1,6 +1,8 @@
 <script>
   import { fade } from 'svelte/transition';
+  import { onMount } from 'svelte';
   import { data } from '../stores.js';
+  import confetti from 'canvas-confetti';
 
   let playData;
   $: playData = $data.playData;
@@ -8,7 +10,7 @@
   // 각 등급별 가중치 설정 (숫자가 클수록 확률이 높음)
   const rarityWeights = {
     common: 15,
-    rare: 5,
+    rare: 7,
     super_rare: 1,
   };
 
@@ -18,6 +20,51 @@
   let showResult = false; // 결과 화면 표시 여부
 
   // --- 함수 ---
+  /**
+   * Rare 등급을 위한 폭죽 효과
+   */
+  function fireRareConfetti() {
+    const count = 200;
+    const defaults = { origin: { y: 0.7 }, zIndex: 100 };
+
+    function fire(particleRatio, opts) {
+      confetti({
+        ...defaults,
+        ...opts,
+        particleCount: Math.floor(count * particleRatio)
+      });
+    }
+
+    fire(0.25, { spread: 26, startVelocity: 55 });
+    fire(0.2, { spread: 60 });
+    fire(0.35, { spread: 100, decay: 0.91, scalar: 0.8 });
+    fire(0.1, { spread: 120, startVelocity: 25, decay: 0.92, scalar: 1.2 });
+    fire(0.1, { spread: 120, startVelocity: 45 });
+  }
+
+  /**
+   * Super Rare 등급을 위한 폭죽 효과
+   */
+  function fireSuperRareConfetti() {
+    const duration = 5 * 1000;
+    const animationEnd = Date.now() + duration;
+    const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 100 };
+
+    function randomInRange(min, max) {
+      return Math.random() * (max - min) + min;
+    }
+
+    const interval = setInterval(function() {
+      const timeLeft = animationEnd - Date.now();
+      if (timeLeft <= 0) {
+        return clearInterval(interval);
+      }
+      const particleCount = 50 * (timeLeft / duration);
+      confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } });
+      confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } });
+    }, 250);
+  }
+
   /**
    * 가중치에 따라 랜덤으로 Fun Fact를 뽑는 함수
    */
@@ -35,7 +82,14 @@
     const randomIndex = Math.floor(Math.random() * gachaPool.length);
     selectedFact = gachaPool[randomIndex];
 
-    // 3. 뷰를 전환합니다.
+    // 3. 희귀도에 따라 폭죽 효과를 추가합니다.
+    if (selectedFact.rarity === 'rare') {
+      fireRareConfetti();
+    } else if (selectedFact.rarity === 'super_rare') {
+      fireSuperRareConfetti();
+    }
+
+    // 4. 뷰를 전환합니다.
     currentView = 'fact';
     showResult = true; // Svelte의 transition을 위해 필요
   }

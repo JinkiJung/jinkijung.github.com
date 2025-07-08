@@ -66,6 +66,7 @@
 		"@threlte/core": "^8.0.4",
 		"@threlte/extras": "^9.2.1",
 		"add-subtract-date": "^1.0.16",
+		"canvas-confetti": "^1.9.3",
 		"elly": "^1.1.11",
 		"formatoid": "^1.2.5",
 		"github-calendar-parser": "^1.2.3",

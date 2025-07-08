@@ -6,6 +6,15 @@
 	import Spectrum from '$lib/components/Spectrum.svelte';
 	import OnePager from '$lib/components/OnePager.svelte';
 
+  let Copenhagen: any;
+
+  onMount(async () => {
+    if (browser) {
+      const module = await import('$lib/components/Copenhagen.svelte');
+      Copenhagen = module.default;
+    }
+  });
+
   let scrollY = 0;
   let scrollPercent = 0;
 
@@ -44,9 +53,10 @@
 
 <main>
   <!-- 3D 배경 -->
-  <Spectrum />
-  <OnePager />
-  <QuestionGrid />
+  
+  {#if Copenhagen}
+    <svelte:component this={Copenhagen} />
+  {/if}
   <!--<ThreeBackground {scrollPercent} />-->
 
   <!-- 3D에서 2D로 전환되는 섹션 -->

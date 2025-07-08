@@ -267,6 +267,10 @@ export const en = {
       sections: [
         // Add your writing sections here
       ]
+    },
+    sceneTexts: {
+      copenhagen: "Shaped in Copenhagen, a diamond polished through a journey of discovery.",
+      daejeon: "Here in Daejeon, I radiate a full spectrum of light and skill.",
     }
   }
 ;

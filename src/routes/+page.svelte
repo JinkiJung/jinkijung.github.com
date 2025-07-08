@@ -5,9 +5,19 @@
   import { browser } from '$app/environment';
 	import Spectrum from '$lib/components/Spectrum.svelte';
 	import OnePager from '$lib/components/OnePager.svelte';
+  import { en } from '../resources/data_en.js';
+  import { ko } from '../resources/data_ko.js';
+  import { language } from '$lib/stores.js'; // language store import
 
   let Copenhagen: any;
   let Daejeon: any;
+
+  let currentLanguageData: any; // 현재 언어 데이터를 저장할 변수
+
+  // language store 구독
+  language.subscribe(lang => {
+    currentLanguageData = lang === 'en' ? en : ko;
+  });
 
   onMount(async () => {
     if (browser) {
@@ -63,10 +73,10 @@
   <div style="height: 300vh;"></div>
   <div style="height: 300vh;"></div>
   {#if Copenhagen && scrollScreen >=1 && scrollScreen < 3.5}
-    <svelte:component this={Copenhagen} startY={window.innerHeight} endY={window.innerHeight * 3.5} text={"Blah"}/>
+    <svelte:component this={Copenhagen} startY={window.innerHeight} endY={window.innerHeight * 3.5} text={currentLanguageData.sceneTexts.copenhagen} fadeOffset={400}/>
   {/if}
   {#if Daejeon && scrollScreen >=3.5 && scrollScreen < 6}
-    <svelte:component this={Daejeon} startY={window.innerHeight*3.5} endY={window.innerHeight*6} text={"Hello"}/>
+    <svelte:component this={Daejeon} startY={window.innerHeight*3.5} endY={window.innerHeight*6} text={currentLanguageData.sceneTexts.daejeon} fadeOffset={400}/>
   {/if}
   <OnePager />
   <QuestionGrid />

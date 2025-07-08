@@ -19,7 +19,7 @@
 
 <div class="fullscreen">
   <Canvas>
-    <CopenhagenScene scrollY={scrollY} url="/copenhagen.glb" />
+    <CopenhagenScene scrollY={scrollY} url="/daejeon.glb" />
   </Canvas>
 </div>
 
@@ -33,4 +33,3 @@
     z-index: 0;
   }
 </style>
-

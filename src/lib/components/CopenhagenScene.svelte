@@ -5,6 +5,7 @@
   import type { MeshStandardMaterial } from 'three';
 
   export let scrollY = 0;
+  export let url: string;
   let rotation_y: 0;
   let _position: number[] = [-30, 2, 20];
   let material: MeshStandardMaterial;
@@ -35,7 +36,7 @@
 <T.DirectionalLight position={[-8, -10, -5]} intensity={0.1} />
 
 <GLTF
-  url="/copenhagen.glb"
+  url={url}
   on:create={({ gltf }) => {
     const box = new THREE.Box3().setFromObject(gltf.scene);
     const center = box.getCenter(new THREE.Vector3());

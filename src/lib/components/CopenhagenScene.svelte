@@ -10,6 +10,7 @@
   let rotation_y: 0;
   let _position: number[] = [-30, 2, 20];
   let material: MeshStandardMaterial;
+  let loaded = false;
   //let camera: T.PerspectiveCamera;
   const { camera, scene } = useThrelte()
 
@@ -46,6 +47,7 @@
     const scale = 5 / maxDim;
     gltf.scene.scale.set(scale, scale, scale);
     gltf.scene.position.sub(center.multiplyScalar(scale));
+    loaded = true;
   }}
 >
   <T.Group rotation={{y: rotation_y}}>
@@ -53,4 +55,9 @@
       <T.MeshStandardMaterial bind:this={material} transparent />
     </T.Mesh>
   </T.Group>
+
+  <T.Mesh rotation.x={-Math.PI / 2}>
+      <T.PlaneGeometry args={[20, 20, 1, 1]} position={[100, 100, 100]}/>
+      <T.MeshStandardMaterial color="blue" />
+    </T.Mesh>
 </GLTF>

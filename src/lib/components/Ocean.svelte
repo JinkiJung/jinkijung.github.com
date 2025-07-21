@@ -61,12 +61,12 @@
   const uniforms = {
     u_time: { value: 0.0 },
     // 파도 모양 관련
-    u_big_waves_elevation: { value: 0.1 }, // 파도 높이
+    u_big_waves_elevation: { value: 0.15 }, // 파도 높이
     u_big_waves_frequency: { value: 2.0 }, // 파도 빈도 (숫자가 클수록 촘촘해짐)
-    u_big_waves_speed: { value: 0.75 }, // 파도 속도
+    u_big_waves_speed: { value: 1 }, // 파도 속도
     // 색상 관련
-    u_deep_color: { value: new Color('#002366') }, // 깊은 물 색상 (사파이어 블루)
-    u_shallow_color: { value: new Color('#87ceeb') }, // 얕은 물 색상 (스카이 블루)
+    u_deep_color: { value: new Color('#357BA6') }, // 깊은 물 색상 (사파이어 블루)
+    u_shallow_color: { value: new Color('#A9D6D3') }, // 얕은 물 색상 (스카이 블루)
     u_color_offset: { value: 0.25 }, // 색상 변화 시작점
     u_color_multiplier: { value: 2.0 } // 색상 변화 강도
   };
@@ -82,7 +82,7 @@
   // useTask 훅: 매 프레임마다 실행되는 로직 (애니메이션)
   useTask((delta) => {
     // 시간(u_time) 값을 계속 업데이트하여 파도가 움직이게 합니다.
-    uniforms.u_time.value += delta * 0.5;
+    uniforms.u_time.value += delta * 1;
   });
 </script>
 

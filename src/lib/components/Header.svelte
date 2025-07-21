@@ -106,33 +106,6 @@
     gap: 2.5rem; /* 언어 선택기와 메뉴 사이 간격 */
   }
 
-  .lang-selector {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .lang-selector a {
-    color: #9ca3af; /* gray-400 */
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 500;
-    transition: color 0.3s ease;
-  }
-
-  .lang-selector a:hover {
-    color: white;
-  }
-  
-  .lang-selector a.active {
-    color: white;
-    font-weight: 600;
-  }
-
-  .lang-selector span {
-    color: #4b5563; /* gray-600 */
-  }
-
   nav {
     display: flex;
     gap: 2rem; /* 메뉴 아이템 사이 간격 */
@@ -150,23 +123,6 @@
 
   nav a:hover {
     color: white;
-  }
-  
-  /* 활성화된 메뉴 스타일 */
-  .active a {
-    color: white;
-    font-weight: 600;
-  }
-  
-  /* 활성화된 메뉴 하단에 밑줄 효과 */
-  .active a::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    background: white;
-    bottom: -4px;
-    left: 0;
   }
 
   /* 오른쪽 영역 (소셜 아이콘) */

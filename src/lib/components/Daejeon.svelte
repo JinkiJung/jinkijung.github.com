@@ -101,7 +101,7 @@
     justify-content: center;
     padding-bottom: 18vh; /* 화면 하단에서 약간 위로 */
     color: white;
-    font-size: 2em;
+    font-size: 1.4em;
     text-align: center;
   }
 </style>

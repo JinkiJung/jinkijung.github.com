@@ -65,20 +65,34 @@
     min-height: 910vh;
     overflow-x: hidden;
   }
+
+  /* 모바일 레이아웃 */
+  @media (max-width: 768px) {
+    main {
+      min-height: 180vh; /* 모바일에서 min-height 변경 */
+    }
+    .desktop-only {
+      display: none; /* 모바일에서 해당 섹션 숨김 */
+    }
+  }
 </style>
 
 <main>
   <!-- 3D 배경 -->
   <Spectrum />
-  <div style="height: 300vh;"></div>
-  <div style="height: 300vh;"></div>
-  {#if Copenhagen && scrollScreen >=1 && scrollScreen < 3.5}
-    <svelte:component this={Copenhagen} startY={window.innerHeight} endY={window.innerHeight * 3.5} text={currentLanguageData.sceneTexts.copenhagen} fadeOffset={400}/>
-  {/if}
-  {#if Daejeon && scrollScreen >=3.5 && scrollScreen < 6}
-    <svelte:component this={Daejeon} startY={window.innerHeight*3.5} endY={window.innerHeight*6} text={currentLanguageData.sceneTexts.daejeon} fadeOffset={400}/>
-  {/if}
+  <div class="desktop-only">
+    <div style="height: 300vh;"></div>
+    <div style="height: 300vh;"></div>
+    {#if Copenhagen && scrollScreen >=1 && scrollScreen < 3.5}
+      <svelte:component this={Copenhagen} startY={window.innerHeight} endY={window.innerHeight * 3.5} text={currentLanguageData.sceneTexts.copenhagen} fadeOffset={400}/>
+    {/if}
+    {#if Daejeon && scrollScreen >=3.5 && scrollScreen < 6}
+      <svelte:component this={Daejeon} startY={window.innerHeight*3.5} endY={window.innerHeight*6} text={currentLanguageData.sceneTexts.daejeon} fadeOffset={400}/>
+    {/if}
+  </div>
   <OnePager />
-  <QuestionGrid />
+  <div class="desktop-only">
+    <QuestionGrid />
+  </div>
   
 </main>

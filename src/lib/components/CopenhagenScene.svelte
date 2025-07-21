@@ -3,6 +3,7 @@
   import { GLTF, OrbitControls } from '@threlte/extras';
   import * as THREE from 'three';
   import type { MeshStandardMaterial } from 'three';
+	import Ocean from './Ocean.svelte';
 
   export let scrollY = 0;
   export let url: string;
@@ -10,6 +11,8 @@
   let rotation_y: 0;
   let _position: number[] = [-30, 2, 20];
   let material: MeshStandardMaterial;
+  let loaded = false;
+  
   //let camera: T.PerspectiveCamera;
   const { camera, scene } = useThrelte()
 
@@ -46,6 +49,7 @@
     const scale = 5 / maxDim;
     gltf.scene.scale.set(scale, scale, scale);
     gltf.scene.position.sub(center.multiplyScalar(scale));
+    loaded = true;
   }}
 >
   <T.Group rotation={{y: rotation_y}}>
@@ -53,4 +57,6 @@
       <T.MeshStandardMaterial bind:this={material} transparent />
     </T.Mesh>
   </T.Group>
+  <Ocean />
+
 </GLTF>

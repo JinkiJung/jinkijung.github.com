@@ -37,9 +37,9 @@
   <div class="text-section" class:visible>
     <div class="content-wrapper">
       <!-- 1. 헤드라인: 당신의 정체성 -->
-      <h1 class="headline">
+      <h3 class="headline">
         {@html onePagerData.headline}
-      </h1>
+      </h3>
 
       <!-- 2. 소개: 당신의 스토리와 철학 -->
       <p class="bio">
@@ -109,15 +109,16 @@
   }
 
   .headline {
-    font-size: 1.8rem;
-    font-weight: 700;
+    font-size: 1.5rem;
+    font-weight: 500;
     line-height: 1.3;
     color: #ffffff;
     margin: 0 0 2rem 0;
   }
 
   .bio {
-    font-size: 1.1rem; /* 18px */
+    font-size: 0.8 rem; /* 18px */
+    font-weight: 100;
     line-height: 1.8;
     color: #d1d5db; /* gray-300 */
     margin-bottom: 3rem;
@@ -132,8 +133,8 @@
   }
 
   .group-title {
-    font-size: 1rem;
-    font-weight: 500;
+    font-size: 1.5 rem;
+    font-weight: 200;
     color: #9ca3af; /* gray-400 */
     border-bottom: 1px solid #374151; /* gray-700 */
     padding-bottom: 0.5rem;
@@ -142,7 +143,8 @@
   }
 
   .competency-group p {
-    font-size: 1.05rem;
+    font-size: 1.55rem;
+    font-weight: 300;
     color: #e5e7eb; /* gray-200 */
     line-height: 1.6;
     margin: 0;
@@ -189,10 +191,6 @@
       align-items: flex-start;
       overflow-y: auto;
     }
-    .headline {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-    }
     .bio {
       font-size: 0.9rem;
       margin-bottom: 1.5rem;
@@ -201,7 +199,7 @@
       margin-bottom: 1rem;
     }
     .group-title {
-      font-size: 0.9rem;
+      font-size: 2 rem;
       padding-bottom: 0.25rem;
       margin-bottom: 0.5rem;
     }
@@ -215,7 +213,7 @@
       padding: 0.5rem;
     }
     .headline {
-      font-size: 1.2rem;
+      font-size: 3rem;
     }
     .bio {
       font-size: 0.8rem;

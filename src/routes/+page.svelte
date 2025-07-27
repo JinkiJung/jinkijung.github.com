@@ -80,16 +80,14 @@
 <main>
   <!-- 3D 배경 -->
   <Spectrum />
-  <div class="desktop-only">
-    <div style="height: 300vh;"></div>
-    <div style="height: 300vh;"></div>
-    {#if Copenhagen && scrollScreen >=1 && scrollScreen < 3.5}
-      <svelte:component this={Copenhagen} startY={window.innerHeight} endY={window.innerHeight * 3.5} text={currentLanguageData.sceneTexts.copenhagen} fadeOffset={400}/>
-    {/if}
-    {#if Daejeon && scrollScreen >=3.5 && scrollScreen < 6}
-      <svelte:component this={Daejeon} startY={window.innerHeight*3.5} endY={window.innerHeight*6} text={currentLanguageData.sceneTexts.daejeon} fadeOffset={400}/>
-    {/if}
-  </div>
+  <div style="height: 300vh;"></div>
+  <div style="height: 300vh;"></div>
+  {#if Copenhagen && scrollScreen >=1 && scrollScreen < 3.5}
+    <svelte:component this={Copenhagen} startY={window.innerHeight} endY={window.innerHeight * 3.5} text={currentLanguageData.sceneTexts.copenhagen} fadeOffset={400}/>
+  {/if}
+  {#if Daejeon && scrollScreen >=3.5 && scrollScreen < 6}
+    <svelte:component this={Daejeon} startY={window.innerHeight*3.5} endY={window.innerHeight*6} text={currentLanguageData.sceneTexts.daejeon} fadeOffset={400}/>
+  {/if}
   <OnePager />
   <div class="desktop-only">
     <QuestionGrid />

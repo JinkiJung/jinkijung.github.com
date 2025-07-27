@@ -34,7 +34,7 @@
       <LanguageSwitcher />
 
       <!-- Main Navigation -->
-      <nav class:mobile-open={menuOpen}>
+      <nav class:mobile-open={menuOpen} on:click={() => menuOpen = false}>
         <a href="{base}/" class:active={$page.url.pathname === base + '/'}>Home</a>
         <a href="{base}/develop" class:active={$page.url.pathname === base + '/develop'}>Develop</a>
         <a href="{base}/write" class:active={$page.url.pathname === base + '/write'}>Write</a>

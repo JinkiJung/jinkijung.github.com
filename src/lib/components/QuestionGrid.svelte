@@ -293,4 +293,37 @@
         color: #FFDD00 !important; /* 노란색으로 고정 */
         text-shadow: 0 0 20px #FFDD00;
     }
+
+    /* 모바일 반응형 */
+    @media (max-width: 768px) {
+        :global(#question-grid span) {
+            font-size: 4vw; /* 모바일에서 폰트 크기 조정 */
+        }
+        .main-text h1 {
+            font-size: 6vw; /* 모바일에서 h1 크기 조정 */
+        }
+        .main-text p {
+            font-size: 3vw; /* 모바일에서 p 크기 조정 */
+        }
+        #flashlight {
+            width: 200px;
+            height: 200px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        :global(#question-grid span) {
+            font-size: 5vw;
+        }
+        .main-text h1 {
+            font-size: 8vw;
+        }
+        .main-text p {
+            font-size: 4vw;
+        }
+        #flashlight {
+            width: 150px;
+            height: 150px;
+        }
+    }
 </style>

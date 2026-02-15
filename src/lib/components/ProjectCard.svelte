@@ -5,13 +5,15 @@
 </script>
 
 <div class="card">
-  <img src={project.image} alt={project.title} class="project-image" />
+  <div class="img-container">
+    <img src={project.image} alt={project.title} class="project-image" />
+  </div>
   <div class="card-content">
     <h3 class="project-title">{project.title}</h3>
     <p class="project-description">{project.description}</p>
     
     <div class="contribution">
-      <span class="label">기여:</span>
+      <span class="label">Role:</span>
       <p>{project.contribution}</p>
     </div>
 
@@ -45,10 +47,14 @@
     transform: translateY(-5px);
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
   }
+  .img-container{
+    width: 100%;
+    background: #000;
+  }
   .project-image {
     width: 100%;
     height: 200px;
-    object-fit: cover;
+    object-fit: contain;
   }
   .card-content {
     padding: 1.5rem; /* 24px */
@@ -104,5 +110,38 @@
   .link-button:hover {
     background-color: #4b5563; /* gray-600 */
     color: white;
+  }
+
+  /* 모바일 반응형 */
+  @media (max-width: 768px) {
+    .card-content {
+      padding: 1rem;
+    }
+    .project-title {
+      font-size: 1.1rem;
+    }
+    .project-description {
+      font-size: 0.9rem;
+    }
+    .contribution {
+      font-size: 0.8rem;
+    }
+    .link-button {
+      font-size: 0.8rem;
+      padding: 0.4rem 0.8rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .project-title {
+      font-size: 1rem;
+    }
+    .project-description {
+      font-size: 0.8rem;
+    }
+    .link-button {
+      font-size: 0.7rem;
+      padding: 0.3rem 0.6rem;
+    }
   }
 </style>

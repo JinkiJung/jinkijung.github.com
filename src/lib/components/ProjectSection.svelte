@@ -73,4 +73,38 @@
         padding-right: 2rem;
     }
   }
+
+  /* 모바일 반응형 */
+  @media (max-width: 768px) {
+    .section-wrapper {
+      padding: 3rem 1rem;
+    }
+    .section-header {
+      margin-bottom: 2rem;
+    }
+    .section-title {
+      font-size: 1.8rem;
+    }
+    .chapter-number {
+      font-size: 0.9rem;
+    }
+    .section-description {
+      font-size: 1rem;
+    }
+    .project-grid {
+      gap: 1.5rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .section-wrapper {
+      padding: 2rem 0.5rem;
+    }
+    .section-title {
+      font-size: 1.5rem;
+    }
+    .section-description {
+      font-size: 0.9rem;
+    }
+  }
 </style>

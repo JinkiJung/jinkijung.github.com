@@ -11,6 +11,8 @@ body {
   line-height: 1.6;
   color: #333;
   background-color: black;
+  /* 기본 폰트 크기 설정 (반응형) */
+  font-size: 16px; /* 기본 데스크탑 크기 */
 }
 
 /* Global styles */
@@ -42,4 +44,45 @@ p {
 
 .mb-4 {
   margin-bottom: 1rem;
-} 
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px; /* 모바일에서 폰트 크기 약간 줄임 */
+  }
+
+  .container {
+    padding: 0 0.5rem; /* 모바일에서 컨테이너 패딩 줄임 */
+  }
+
+  h1 {
+    font-size: 2.5rem; /* 모바일 h1 크기 조정 */
+  }
+
+  h2 {
+    font-size: 2rem; /* 모바일 h2 크기 조정 */
+  }
+
+  h3 {
+    font-size: 1.5rem; /* 모바일 h3 크기 조정 */
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 12px; /* 더 작은 모바일에서 폰트 크기 더 줄임 */
+  }
+
+  h1 {
+    font-size: 2rem; /* 더 작은 모바일 h1 크기 조정 */
+  }
+
+  h2 {
+    font-size: 1.5rem; /* 더 작은 모바일 h2 크기 조정 */
+  }
+
+  h3 {
+    font-size: 1.2rem; /* 더 작은 모바일 h3 크기 조정 */
+  }
+}

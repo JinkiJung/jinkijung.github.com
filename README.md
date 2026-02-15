@@ -1,58 +1,17 @@
-# Svelte library
+# Jinki's webpage based on Svelte
 
-Everything you need to build a Svelte library, powered by [`sv`](https://npmjs.com/package/sv).
+Hi, welcome to my personal webpage. 
 
-Read more about creating a library [in the docs](https://svelte.dev/docs/kit/packaging).
+## ✨ Built with the Power of LLMs
 
-## Creating a project
+A significant portion of this website—ranging from ideation and planning to design and even code generation—was created with the assistance of various **Large Language Model (LLM)** services, including prompt-driven design workflows and AI-powered coding suggestions.
 
-If you're seeing this, you've probably already done this step. Congrats!
+These tools have not only accelerated development but also inspired creative and structural decisions throughout the process.
 
-```bash
-# create a new project in the current directory
-npx sv create
+## 🎨 Icons & License Notice
 
-# create a new project in my-app
-npx sv create my-app
-```
+This project uses icons from **Font Awesome Free**:
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-Everything inside `src/lib` is part of your library, everything inside `src/routes` can be used as a showcase or preview app.
-
-## Building
-
-To build your library:
-
-```bash
-npm run package
-```
-
-To create a production version of your showcase app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
-
-## Publishing
-
-Go into the `package.json` and give your package the desired name through the `"name"` option. Also consider adding a `"license"` field and point it to a `LICENSE` file which you can create from a template (one popular option is the [MIT license](https://opensource.org/license/mit/)).
-
-To publish your library to [npm](https://www.npmjs.com):
-
-```bash
-npm publish
-```
+Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com
+License: https://fontawesome.com/license/free
+Copyright 2025 Fonticons, Inc.

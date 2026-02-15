@@ -103,4 +103,33 @@
 
   /* Add styles for .writing-section if you create it */
 
+  /* 모바일 반응형 */
+  @media (max-width: 768px) {
+    .page-header {
+      padding: 2rem 1rem;
+    }
+    .main-title {
+      font-size: 2rem;
+    }
+    .links a {
+      font-size: 0.9rem;
+      margin-right: 1rem;
+    }
+    .description {
+      font-size: 1rem;
+    }
+    .sections-container {
+      padding: 0 1rem 2rem 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .main-title {
+      font-size: 1.8rem;
+    }
+    .description {
+      font-size: 0.9rem;
+    }
+  }
+
 </style>

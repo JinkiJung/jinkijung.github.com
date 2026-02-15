@@ -170,4 +170,58 @@
     margin: 0 auto;
     line-height: 1.8;
   }
+
+  /* 모바일 반응형 */
+  @media (max-width: 768px) {
+    .page-header {
+      padding: 2rem 1rem;
+    }
+    .main-title {
+      font-size: 2rem;
+    }
+    .links a {
+      font-size: 0.9rem;
+      margin-right: 1rem;
+    }
+    .description {
+      font-size: 1rem;
+    }
+    .research-container {
+      padding: 0 1rem 2rem 1rem;
+    }
+    .research-section {
+      margin-bottom: 2rem;
+    }
+    .section-title {
+      font-size: 1.8rem;
+    }
+    .section-description {
+      font-size: 0.9rem;
+    }
+    .video-container {
+      padding-top: 75%; /* 4:3 Aspect Ratio for better mobile fit */
+    }
+    .closing-section {
+      padding: 2rem 1rem;
+      margin-top: 2rem;
+    }
+    .closing-section p {
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .main-title {
+      font-size: 1.8rem;
+    }
+    .description {
+      font-size: 0.9rem;
+    }
+    .section-title {
+      font-size: 1.5rem;
+    }
+    .section-description {
+      font-size: 0.8rem;
+    }
+  }
 </style>

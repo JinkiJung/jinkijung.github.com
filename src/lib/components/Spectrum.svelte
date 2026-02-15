@@ -210,4 +210,46 @@
     margin: 0;
     padding: 0;
   }
+
+  /* 모바일 반응형 */
+  @media (max-width: 768px) {
+    .image-wrapper {
+      padding-top: 5rem; /* 모바일에서 패딩 조정 */
+    }
+
+    .text-content {
+      right: 15px; /* 모바일에서 오른쪽 여백 조정 */
+      top: 50%; /* 모바일에서 중앙 정렬 */
+      transform: translateY(-50%);
+      text-align: center; /* 텍스트 중앙 정렬 */
+      width: 100%; /* 너비 100%로 설정 */
+      left: 0;
+      padding: 0 15px;
+      box-sizing: border-box;
+      white-space: normal; /* 줄바꿈 허용 */
+    }
+
+    h1 {
+      font-size: 2rem; /* 모바일에서 h1 크기 조정 */
+    }
+
+    .sub-overlay-text {
+      font-size: 1rem; /* 모바일에서 subtitle 크기 조정 */
+    }
+
+    .scroll-indicator {
+      bottom: 1rem;
+      font-size: 0.7rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 1.5rem;
+    }
+
+    .sub-overlay-text {
+      font-size: 0.9rem;
+    }
+  }
 </style>

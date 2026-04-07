@@ -40,6 +40,7 @@
         <a href="{base}/write" class:active={$page.url.pathname === base + '/write'}>Write</a>
         <a href="{base}/research" class:active={$page.url.pathname === base + '/research'}>Research</a>
         <a href="{base}/play" class:active={$page.url.pathname === base + '/play'}>Play</a>
+        <a href="https://jinkijung.github.io/iil-career" target="_blank" class="portfolio-link">Portfolio</a>
       </nav>
     </div>
 
@@ -123,6 +124,12 @@
 
   nav a:hover {
     color: white;
+  }
+
+  nav a.portfolio-link {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-color: white;
   }
 
   /* 오른쪽 영역 (소셜 아이콘) */

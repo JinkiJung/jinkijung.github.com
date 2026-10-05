@@ -1,0 +1,10 @@
+<!doctype html><html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AI 적 캐릭터 3종</title><style>body{background:#172521;color:#e5eee7;font:15px system-ui;margin:0;padding:36px}main{max-width:1000px;margin:auto}h1{font-size:26px}p{color:#aec2b8;line-height:1.7}.cards{display:flex;gap:18px;flex-wrap:wrap}.card{background:#31473e;border:1px solid #586e62;border-radius:12px;padding:24px;flex:1;min-width:220px;text-align:center}canvas{width:192px;height:192px;image-rendering:pixelated}.small{display:block;width:32px;height:32px;margin:20px auto}h2{font-size:18px}small{color:#aec2b8}</style><main><h1>AI 서비스 테마 · 일반 적 시안</h1><p>로고의 큰 형태를 느슨하게 참고한 캐릭터 시안입니다.</p><div class="cards"><section class="card" data-art="enemy-loop-v2.png"><h2>루프봇</h2><p>얽힌 고리 · OpenAI 형태에서 영감</p></section><section class="card" data-art="enemy-angle-v4.png"><h2>앵글봇</h2><p>금속 방사형 · 주황 발광 하이라이트</p></section><section class="card" data-art="enemy-star-v2.png"><h2>스파크봇</h2><p>네 갈래 별 · Gemini 형태에서 영감</p></section></div><p><small>16×16 렌더링 · 확대 및 실제 크기 비교 · 게임 적용 전 시안</small></p></main><script type="module">
+for(const card of document.querySelectorAll('.card')){
+ const img=new Image();img.src=card.dataset.art;await img.decode();
+ const source=document.createElement('canvas');source.width=img.width;source.height=img.height;
+ const context=source.getContext('2d');context.drawImage(img,0,0);const pixels=context.getImageData(0,0,img.width,img.height).data;
+ let l=img.width,t=img.height,r=0,b=0;for(let y=0;y<img.height;y++)for(let x=0;x<img.width;x++){if(pixels[(y*img.width+x)*4+3]>128){l=Math.min(l,x);t=Math.min(t,y);r=Math.max(r,x);b=Math.max(b,y);}}
+ const side=Math.max(r-l+1,b-t+1)*1.15,cx=(r+l)/2,cy=(b+t)/2;
+ for(const small of [false,true]){const c=document.createElement('canvas');c.width=c.height=16;if(small)c.className='small';c.setAttribute('aria-label',card.querySelector('h2').textContent);const ctx=c.getContext('2d');ctx.imageSmoothingEnabled=false;ctx.drawImage(img,cx-side/2,cy-side/2,side,side,0,0,16,16);card.append(c);}
+}
+</script></html>

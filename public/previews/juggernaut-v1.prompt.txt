@@ -1,0 +1,7 @@
+Built-in image_gen; transparent background.
+
+Use case: stylized-concept
+Asset type: one transparent pixel-art game enemy sprite, a hulking steampunk charging robot.
+Primary request: retain a compact broad rounded-rectangle silhouette of a top-down juggernaut tank-like robot. Rust red and dark burgundy domed armor, massive blunt shoulder plates and piston fists, gunmetal joints, sparse copper and brass highlights, tiny recessed amber visor at the FRONT bottom edge. A stupidly powerful crude industrial robot, riveted boiler armor, two short exhaust vents at the rear. No human skin.
+Composition: STRICT directly overhead top-down camera, robot faces DOWN toward bottom of image; see top of domed head and shoulders, not a front-view standing portrait. Squat almost square body, arms tightly alongside body, tiny feet only subtly protruding. Single centered sprite with transparent margin, no scenery, no ground shadow, no text.
+Style: authentic very low resolution retro pixel sprite designed on a 32 by 32 logical pixel grid, enlarged with perfectly crisp square pixels. Large readable pixel clusters and stepped contours, limited 12-color palette, hard pixel shading, no fine textures, no gradients, no antialias. Dominant red-brown iron armor with dark seams and muted brass edge highlights. Built for 48–56 screen pixels. One idle pose only. Original robot design.

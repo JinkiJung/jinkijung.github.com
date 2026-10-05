@@ -1,0 +1,32 @@
+name: Fetch RSS posts
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'   # 6시간마다 자동 실행
+  workflow_dispatch:          # 수동 실행 가능
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Fetch RSS and update posts.json
+        run: node scripts/fetch-rss.mjs
+
+      - name: Commit if changed
+        run: |
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name  "github-actions[bot]"
+          git add public/posts.json
+          git diff --cached --quiet \
+            && echo "No changes to commit." \
+            || (git commit -m "chore: update posts [skip ci]" && git push)

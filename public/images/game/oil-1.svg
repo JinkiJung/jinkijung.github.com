@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="144" height="144" viewBox="0 0 144 144">
+<defs>
+ <linearGradient id="surface" x2=".35" y2="1"><stop stop-color="#292d2e"/><stop offset=".45" stop-color="#0a0d0f"/><stop offset="1" stop-color="#030607"/></linearGradient>
+ <linearGradient id="sheen"><stop stop-color="#829795" stop-opacity=".16"/><stop offset=".5" stop-color="#918097" stop-opacity=".12"/><stop offset="1" stop-color="#c2b589" stop-opacity=".1"/></linearGradient>
+ <clipPath id="pool"><path d="M9 59 C5 43 23 38 40 42 C57 46 47 27 57 21 C67 15 76 25 84 18 C95 7 126 12 132 26 C139 41 112 34 111 47 C111 58 135 48 138 65 C142 82 119 86 103 81 C88 77 101 97 114 103 C134 114 121 134 96 136 C72 138 65 123 53 127 C35 134 17 123 24 111 C33 98 55 104 52 91 C49 78 16 88 9 73 C6 68 7 64 9 59 Z"/></clipPath>
+</defs>
+<path d="M9 59 C5 43 23 38 40 42 C57 46 47 27 57 21 C67 15 76 25 84 18 C95 7 126 12 132 26 C139 41 112 34 111 47 C111 58 135 48 138 65 C142 82 119 86 103 81 C88 77 101 97 114 103 C134 114 121 134 96 136 C72 138 65 123 53 127 C35 134 17 123 24 111 C33 98 55 104 52 91 C49 78 16 88 9 73 C6 68 7 64 9 59 Z" transform="translate(0 2)" fill="#000" opacity=".45"/>
+<path d="M9 59 C5 43 23 38 40 42 C57 46 47 27 57 21 C67 15 76 25 84 18 C95 7 126 12 132 26 C139 41 112 34 111 47 C111 58 135 48 138 65 C142 82 119 86 103 81 C88 77 101 97 114 103 C134 114 121 134 96 136 C72 138 65 123 53 127 C35 134 17 123 24 111 C33 98 55 104 52 91 C49 78 16 88 9 73 C6 68 7 64 9 59 Z" fill="url(#surface)" stroke="#52615d" stroke-width="1.2"/>
+<g clip-path="url(#pool)">
+ <path d="M5 49 C39 8 104 26 139 49 C105 38 78 75 48 70 C21 65 12 83 5 72Z" fill="url(#sheen)"/>
+ <ellipse cx="71" cy="45" rx="25" ry="9" fill="#b3c3bb" opacity=".065" transform="rotate(-18 72 52)"/>
+ <path d="M15 73 C21 83 37 75 49 83 M79 127 C96 136 112 126 115 119" fill="none" stroke="#c8d8d2" stroke-width="1.5" stroke-linecap="round" opacity=".65"/>
+</g>
+</svg>

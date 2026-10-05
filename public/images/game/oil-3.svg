@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="144" height="144" viewBox="0 0 144 144">
+<defs>
+ <linearGradient id="surface" x2=".35" y2="1"><stop stop-color="#292d2e"/><stop offset=".45" stop-color="#0a0d0f"/><stop offset="1" stop-color="#030607"/></linearGradient>
+ <linearGradient id="sheen"><stop stop-color="#829795" stop-opacity=".16"/><stop offset=".5" stop-color="#918097" stop-opacity=".12"/><stop offset="1" stop-color="#c2b589" stop-opacity=".1"/></linearGradient>
+ <clipPath id="pool"><path d="M8 70 C4 53 24 48 37 51 C53 55 24 27 42 16 C59 5 75 20 79 32 C84 45 97 12 116 19 C134 26 118 43 124 54 C131 65 143 69 136 85 C130 98 113 86 105 97 C98 107 120 121 103 133 C83 147 71 124 59 121 C43 116 30 137 17 123 C5 109 28 96 23 88 C19 82 10 83 8 70 Z"/></clipPath>
+</defs>
+<path d="M8 70 C4 53 24 48 37 51 C53 55 24 27 42 16 C59 5 75 20 79 32 C84 45 97 12 116 19 C134 26 118 43 124 54 C131 65 143 69 136 85 C130 98 113 86 105 97 C98 107 120 121 103 133 C83 147 71 124 59 121 C43 116 30 137 17 123 C5 109 28 96 23 88 C19 82 10 83 8 70 Z" transform="translate(0 2)" fill="#000" opacity=".45"/>
+<path d="M8 70 C4 53 24 48 37 51 C53 55 24 27 42 16 C59 5 75 20 79 32 C84 45 97 12 116 19 C134 26 118 43 124 54 C131 65 143 69 136 85 C130 98 113 86 105 97 C98 107 120 121 103 133 C83 147 71 124 59 121 C43 116 30 137 17 123 C5 109 28 96 23 88 C19 82 10 83 8 70 Z" fill="url(#surface)" stroke="#52615d" stroke-width="1.2"/>
+<g clip-path="url(#pool)">
+ <path d="M5 61 C39 8 104 26 139 49 C105 38 78 75 48 70 C21 65 12 83 5 72Z" fill="url(#sheen)"/>
+ <ellipse cx="87" cy="59" rx="25" ry="9" fill="#b3c3bb" opacity=".065" transform="rotate(-18 72 52)"/>
+ <path d="M15 73 C21 83 37 75 49 83 M79 127 C96 136 112 126 115 119" fill="none" stroke="#c8d8d2" stroke-width="1.5" stroke-linecap="round" opacity=".65"/>
+</g>
+</svg>

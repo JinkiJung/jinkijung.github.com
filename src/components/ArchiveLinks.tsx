@@ -8,15 +8,14 @@ export default function ArchiveLinks() {
       </header>
       <div className="archive-list">
         {PAGE_ARCHIVES.map((item) => (
-          <a
+          <span
             key={item.years}
-            href={item.url}
-            target="_blank"
-            rel="noopener noreferrer"
+            aria-disabled="true"
+            title="Coming soon"
             className="archive-chip"
           >
             {item.years}
-          </a>
+          </span>
         ))}
       </div>
     </section>

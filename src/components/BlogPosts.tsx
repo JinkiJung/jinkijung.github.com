@@ -20,7 +20,7 @@ export default function BlogPosts() {
   if (!posts || posts.length === 0) return null;
 
   return (
-    <section className="blog-posts" data-breakable>
+    <section id="recent-posts" className="blog-posts" data-breakable>
       <header className="blog-posts-head">
         <span className="blog-posts-eyebrow">Recent Posts</span>
       </header>

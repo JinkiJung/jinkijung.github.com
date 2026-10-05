@@ -29,7 +29,7 @@ function WireframeLayout() {
   const slide = PAGE_SLIDES[slideIndex];
 
   return (
-    <div className="viewport-section">
+    <div className="viewport-section hero-section">
       <div className="shell">
         <div className="wf-header" data-breakable>
           <Header />
@@ -39,7 +39,7 @@ function WireframeLayout() {
           <div className={`wf-detail-content${visible ? "" : " is-fading"}`}>
             <span className="wf-detail-label">{slide.label}</span>
             <h2 className="wf-detail-title">{slide.title}</h2>
-            <p className="wf-detail-body">{slide.body}</p>
+            <p className="wf-detail-body">{slide.body}{slide.link && <> <a href={slide.link.href}>{slide.link.label}</a> below.</>}</p>
           </div>
         </div>
         <div className="wf-indicators" data-breakable>

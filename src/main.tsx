@@ -21,17 +21,18 @@ export const PAGE_SLIDES = [
   {
     label: "Work",
     title: "Projects & Research",
-    body: "From sub-50ms LLM gateways to CRDT-based outliners. Each project is a question asked in code, usually answered in a different language than it started.",
+    body: "From real-time mobile AR tracking to VR training with Tasc. My research spans augmented reality, reusable training scenarios, and simulations that explore how to keep AR users safe.",
   },
   {
     label: "Writing",
     title: "Notes & Essays",
-    body: "Long-form thinking on software design, tools for thought, and the odd experience of building for an audience of one.",
+    body: "Now based in Korea, I’m also an author who turned six years of life in Denmark into a collection of essays. I write a Korean-language blog, too. Explore my latest writing in",
+    link: { label: "Recent posts", href: "#recent-posts" },
   },
   {
-    label: "Connect",
-    title: "Open to Collaboration",
-    body: "Available for research partnerships, consulting, and the occasional side project that's too weird to have a job description yet.",
+    label: "Off duty",
+    title: "Away from the Keyboard",
+    body: "In my spare time, you’ll find me paddling a canoe or setting up a chair somewhere scenic, happy to take things slow. I’m a middle-aged guy who loves birdwatching, old games, books, travel, cooking, and a good dad joke — or a terrible one.",
   },
 ];
 

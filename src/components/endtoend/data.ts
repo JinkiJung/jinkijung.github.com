@@ -103,7 +103,7 @@ export const STAGES: Stage[] = [
     org: "AIVeNautics",
     period: "2025 – present",
     role: "Technical director",
-    title: "MCP was a standard. Now it's an app.",
+    title: "I led the development of Ch@tSea — MCP’s first commercial app.",
     paras: [
       "Ch@tSea runs all three MCP components in one app: an MCP certificate on the phone proves who you are, services found through MSR are drawn as polygons on the map with their S-100 data behind them, and messages travel end-to-end encrypted over MMS. Per our launch post, it is the first commercial application to do so.",
       "Before it, MCP's one live deployment covered identity and service discovery for contracted companies only. Turning the rest into a product meant deciding what a navigator never needs to see — and that call is only safe to make if you built the layers underneath yourself.",

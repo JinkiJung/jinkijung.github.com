@@ -1,4 +1,5 @@
 <script>
+  import { base } from '$app/paths';
   import { onMount } from 'svelte';
   import { data } from '../stores.js';
 
@@ -30,7 +31,7 @@
 <div class="page-container">
   <!-- 왼쪽 이미지 영역 -->
   <div class="image-section" class:visible>
-    <img width="100%" src="/jinki.jung.jpg" alt="Jinki Jung's profile" />
+    <img width="100%" src="{base}/jinki.jung.jpg" alt="Jinki Jung's profile" />
   </div>
 
   <!-- 오른쪽 텍스트 영역 -->

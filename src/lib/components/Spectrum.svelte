@@ -1,4 +1,5 @@
 <script>
+  import { base } from '$app/paths';
   import { onMount } from 'svelte';
   import { fade } from 'svelte/transition';
   import { data } from '../stores.js';
@@ -51,7 +52,7 @@
       on:introend={onImageIntroEnd}
     >
       <img
-        src="./spectrum.png"
+        src="{base}/spectrum.png"
         alt="A black dog"
       />
 

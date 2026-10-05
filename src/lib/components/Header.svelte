@@ -5,7 +5,7 @@
 
   // 아이콘에 연결될 링크 (실제 주소로 변경해주세요)
   const socialLinks = {
-    cv: './pdf/Curriculum_vitae_250707.pdf',
+    cv: `${base}/pdf/Curriculum_vitae_250707.pdf`,
     mail: 'mailto:your.jinki.jung@gmail.com',
     github: 'https://github.com/jinkijung',
     linkedin: 'https://linkedin.com/in/jinkijung',

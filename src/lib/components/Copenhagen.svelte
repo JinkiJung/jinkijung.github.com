@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { base } from '$app/paths';
   import { Canvas } from '@threlte/core';
   import { onMount } from 'svelte';
   import CopenhagenScene from './CopenhagenScene.svelte';
@@ -59,7 +60,7 @@
 
 <div class="fullscreen">
   <Canvas>
-    <CopenhagenScene scrollY={scrollY} url="/copenhagen.glb" {startY} {text} />
+    <CopenhagenScene scrollY={scrollY} url="{base}/copenhagen.glb" {startY} {text} />
   </Canvas>
   <!-- 검은색 반투명 오버레이 -->
   <div class="overlay" style="opacity: {overlayOpacity};" ></div>

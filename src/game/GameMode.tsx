@@ -62,7 +62,7 @@ export default function GameMode({ onClose, onRetry }: { onClose: () => void; on
     const previousFocus = document.activeElement as HTMLElement | null;
     const x = scrollX, y = scrollY;
     const overflow = document.documentElement.style.overflow;
-    const animations = page.getAnimations({ subtree: true }).filter(a => a.playState === 'running');
+    const animations = (page.getAnimations?.({ subtree: true }) ?? []).filter(a => a.playState === 'running');
     animations.forEach(a => a.pause());
     const controller = new AbortController();
     const run = new RankedRun(leaderboardApi);
@@ -97,20 +97,27 @@ export default function GameMode({ onClose, onRetry }: { onClose: () => void; on
     const prepare = async () => {
       try {
         // Share the initial read with all homepage tickers and the results panel.
+        setStatus('Loading leaderboards…');
         await boardStore.load();
         if (controller.signal.aborted) return;
         const snapshot = await Promise.race([
-          captureGameWorld(page, controller.signal),
+          captureGameWorld(page, controller.signal, message => { if (!controller.signal.aborted) setStatus(message); }),
           new Promise<never>((_, reject) => { timer = setTimeout(() => reject(new Error('SCENE_TIMEOUT')), 30000); }),
         ]);
         clearTimeout(timer!);
         if (controller.signal.aborted) return;
-        await Promise.all([loadPlayerSprite(),loadDeathSprites(),loadBonusSprite(),loadEnemySprites()]);
+        setStatus('Loading characters…');
+        await Promise.race([
+          Promise.all([loadPlayerSprite(),loadDeathSprites(),loadBonusSprite(),loadEnemySprites()]),
+          new Promise<never>((_, reject) => { timer = setTimeout(() => reject(new Error('SPRITE_LOAD_FAILED')), 20000); }),
+        ]);
+        clearTimeout(timer!);
         if(controller.signal.aborted)return;
         setStatus('Preparing your game session…');
         await run.start();
         if (controller.signal.aborted) { run.cancel(); return; }
         document.documentElement.style.overflow = 'hidden';
+        setStatus('Starting the game…');
         dispose = startGame(surface.current!, actors.current!, snapshot, setStats, () => fail('Graphics connection lost. Exit and try again.'), () => controls.current, run);
         setReady(true);
       } catch (error) {

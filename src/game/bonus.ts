@@ -1,13 +1,14 @@
+import { loadImage } from './loadImage.ts';
 export type BonusKind='collision'|'oilPit';
 export const BONUS_POINTS={collision:750,oilPit:2000} as const;
 let sprite:HTMLCanvasElement;
 let loading:Promise<void>|undefined;
 export function loadBonusSprite(){
  return loading ??= (async()=>{
-  const image=new Image();image.src=`${import.meta.env.BASE_URL}images/game/bonus.png`;await image.decode();
+  const image=await loadImage(`${import.meta.env.BASE_URL}images/game/bonus.png`);
   sprite=document.createElement('canvas');sprite.width=96;sprite.height=32;
   const ctx=sprite.getContext('2d')!;ctx.imageSmoothingEnabled=false;ctx.drawImage(image,0,0,96,32);
- })();
+ })().catch(error=>{loading=undefined;throw error;});
 }
 export function createBonuses(){
  const effects:{x:number;y:number;kind:BonusKind;age:number}[]=[];

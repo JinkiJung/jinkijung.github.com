@@ -1,3 +1,4 @@
+import { loadImage } from './loadImage.ts';
 export const ENEMY_SKINS=['loop','angle','star'] as const;
 export const JUGGERNAUT_SKIN=ENEMY_SKINS.length;
 export function randomEnemySkin(random=Math.random){return Math.min(2,Math.floor(random()*3));}
@@ -5,7 +6,7 @@ const sprites:HTMLCanvasElement[]=[],flashes:HTMLCanvasElement[]=[];
 let loading:Promise<void>|undefined;
 export function loadEnemySprites(){
  return loading ??= Promise.all([...ENEMY_SKINS,'juggernaut'].map(async(name,index)=>{
-  const image=new Image();image.src=`${import.meta.env.BASE_URL}images/game/enemy-${name}.png`;await image.decode();
+  const image=await loadImage(`${import.meta.env.BASE_URL}images/game/enemy-${name}.png`);
   const source=document.createElement('canvas');source.width=image.width;source.height=image.height;
   const context=source.getContext('2d')!;context.drawImage(image,0,0);
   const pixels=context.getImageData(0,0,image.width,image.height).data;
@@ -19,7 +20,7 @@ export function loadEnemySprites(){
   const flash=document.createElement('canvas');flash.width=flash.height=resolution;
   const tint=flash.getContext('2d')!;tint.drawImage(canvas,0,0);tint.globalCompositeOperation='source-atop';tint.fillStyle='#ffe4c6b0';tint.fillRect(0,0,resolution,resolution);flashes[index]=flash;
   source.width=source.height=1;
- })).then(()=>{});
+ })).then(()=>{}).catch(error=>{loading=undefined;throw error;});
 }
 export function drawEnemySprite(ctx:CanvasRenderingContext2D,skin:number,hit=false){
  const sprite=(hit?flashes:sprites)[skin];if(!sprite)return;

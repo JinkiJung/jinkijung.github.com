@@ -1,17 +1,17 @@
+import { loadImage } from './loadImage.ts';
 type DeathSprite = 'skull' | 'bones';
 const sprites:HTMLCanvasElement[]=[];
 let loading:Promise<void>|undefined;
 export function loadDeathSprites():Promise<void> {
   return loading ??= (async()=>{
-    const image=new Image();image.src=`${import.meta.env.BASE_URL}images/game/death-sheet.png`;
-    await image.decode();
+    const image=await loadImage(`${import.meta.env.BASE_URL}images/game/death-sheet.png`);
     for(let i=0;i<2;i++){
       const canvas=document.createElement('canvas');canvas.width=canvas.height=32;
       const ctx=canvas.getContext('2d')!;ctx.imageSmoothingEnabled=false;
       ctx.drawImage(image,i*image.width/2,0,image.width/2,image.height,0,0,32,32);
       sprites.push(canvas);
     }
-  })();
+  })().catch(error=>{loading=undefined;throw error;});
 }
 function drawSprite(ctx:CanvasRenderingContext2D,kind:DeathSprite) {
   const sprite=sprites[kind==='skull'?0:1];if(!sprite)return;

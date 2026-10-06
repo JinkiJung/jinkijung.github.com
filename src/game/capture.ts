@@ -1,3 +1,4 @@
+import { loadImage } from './loadImage.ts';
 import { captureScale } from './snapshotTiles';
 import type { PenaltyRegion } from './penalties';
 import { sealTextRegions, sealRenderedTextLines } from './textCollision';
@@ -100,9 +101,7 @@ export async function capturePage(page: HTMLElement, signal: AbortSignal, main =
   });
   const ratio = captureScale(width, height, devicePixelRatio, main);
   const rasterize = async (doc: Document) => {
-    const image = new Image();
-    image.src = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(new XMLSerializer().serializeToString(doc))}`;
-    await image.decode();
+    const image = await loadImage(`data:image/svg+xml;charset=utf-8,${encodeURIComponent(new XMLSerializer().serializeToString(doc))}`, { signal, errorCode: 'SCENE_TIMEOUT' });
     signal.throwIfAborted();
     const canvas = document.createElement('canvas');
     canvas.width = Math.round(width * ratio); canvas.height = Math.round(height * ratio);

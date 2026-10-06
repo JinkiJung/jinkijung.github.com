@@ -1,10 +1,11 @@
+import { inlineStageImages } from './stageImages';
 import { splitSnapshot } from './snapshotTiles';
 import { capturePage } from './capture';
 import { stageLayout } from './stages/layout';
 
 type Snapshot = Awaited<ReturnType<typeof capturePage>>;
 
-async function captureStage(path: string, signal: AbortSignal): Promise<Snapshot> {
+async function captureStage(path: string, signal: AbortSignal, images: Map<string, Promise<string>>): Promise<Snapshot> {
   const frame = document.createElement('iframe');
   frame.setAttribute('sandbox', 'allow-same-origin');
   frame.setAttribute('aria-hidden', 'true'); frame.tabIndex = -1;
@@ -21,19 +22,24 @@ async function captureStage(path: string, signal: AbortSignal): Promise<Snapshot
     });
     signal.throwIfAborted();
     await frame.contentDocument!.fonts.ready;
+    await inlineStageImages(frame.contentDocument!.body, signal, images);
     return await capturePage(frame.contentDocument!.body, signal, false);
   } finally { frame.remove(); }
 }
 
-export async function captureGameWorld(page: HTMLElement, signal: AbortSignal) {
+export async function captureGameWorld(page: HTMLElement, signal: AbortSignal, progress: (message: string) => void = () => {}) {
+  progress('Preparing the homepage…');
   const main = await capturePage(page,signal);
   const upper:Snapshot[]=[],lower:Snapshot[]=[];
+  const images = new Map<string, Promise<string>>();
   // Limit concurrent foreign-object captures to avoid a startup memory spike.
   for(let i=1;i<=3;i++){
-    const [up,down]=await Promise.all([captureStage(`index-up-${i}`,signal),captureStage(`index-down-${i}`,signal)]);
+    progress(`Preparing extra stages (${i}/3)…`);
+    const [up,down]=await Promise.all([captureStage(`index-up-${i}`,signal,images),captureStage(`index-down-${i}`,signal,images)]);
     upper.unshift(up);lower.push(down);
   }
   signal.throwIfAborted();
+  progress('Assembling the game world…');
   const layout = stageLayout(main.height, upper.reduce((s,p)=>s+p.height,0), lower.reduce((s,p)=>s+p.height,0), main.initialScrollY);
   const width = main.width, height = layout.height;
   const ratio = Math.min(devicePixelRatio, 1.5, 4096 / Math.max(width, height), 2048 / width);

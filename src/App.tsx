@@ -26,7 +26,6 @@ function WireframeLayout() {
     }, FADE_MS);
   };
 
-  const slide = PAGE_SLIDES[slideIndex];
 
   return (
     <div className="viewport-section hero-section">
@@ -36,10 +35,16 @@ function WireframeLayout() {
         </div>
         <WireframeSwiper current={current} onGoTo={handleGoTo} />
         <div className="wf-detail" data-breakable>
-          <div className={`wf-detail-content${visible ? "" : " is-fading"}`}>
-            <span className="wf-detail-label">{slide.label}</span>
-            <h2 className="wf-detail-title">{slide.title}</h2>
-            <p className="wf-detail-body">{slide.body}{slide.link && <> <a href={slide.link.href}>{slide.link.label}</a> below.</>}</p>
+          <div className="wf-detail-stack">
+            {PAGE_SLIDES.map((slide, index) => (
+              <div key={slide.label} aria-hidden={index !== slideIndex ? true : undefined}
+                className={`wf-detail-content${visible ? "" : " is-fading"}`}
+                style={{ visibility: index === slideIndex ? "visible" : "hidden" }}>
+                <span className="wf-detail-label">{slide.label}</span>
+                <h2 className="wf-detail-title">{slide.title}</h2>
+                <p className="wf-detail-body">{slide.body}{slide.link && <> <a href={slide.link.href}>{slide.link.label}</a> below.</>}</p>
+              </div>
+            ))}
           </div>
         </div>
         <div className="wf-indicators" data-breakable>

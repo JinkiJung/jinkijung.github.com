@@ -16,7 +16,7 @@ export const PAGE_SLIDES = [
   {
     label: "Intro",
     title: "Oddly Creative Builder",
-    body: "Designing and building tools at the intersection of language, systems, and interaction — mostly solo, always from scratch.",
+    body: "I like being a beginner. Building software, writing stories, trying something unfamiliar — each is a chance to learn. I enjoy the discovery, and I’m committed to the work it takes to finish.",
   },
   {
     label: "Work",
@@ -32,7 +32,7 @@ export const PAGE_SLIDES = [
   {
     label: "Off duty",
     title: "Away from the Keyboard",
-    body: "In my spare time, you’ll find me paddling a canoe or setting up a chair somewhere scenic, happy to take things slow. I’m a middle-aged guy who loves birdwatching, old games, books, travel, cooking, and a good dad joke — or a terrible one.",
+    body: <>In my spare time, you’ll find me <a href="https://jinkijung.github.io/kacc-webpage/" target="_blank" rel="noopener noreferrer">paddling a canoe</a> or setting up a chair somewhere scenic, happy to take things slow. I’m a middle-aged guy who loves birdwatching, old games, books, travel, cooking, and a good dad joke — or a terrible one.</>,
   },
 ];
 

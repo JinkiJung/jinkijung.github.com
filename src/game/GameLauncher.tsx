@@ -1,6 +1,7 @@
 import { createPortal } from 'react-dom';
-import { Component, lazy, Suspense, useCallback, useState, type ReactNode } from 'react';
+import { Component, lazy, Suspense, useCallback, useEffect, useState, type ReactNode } from 'react';
 import './game.css';
+import { GAME_LAUNCH_EVENT } from './launch';
 const GameMode = lazy(() => import('./GameMode'));
 
 class GameLoadBoundary extends Component<{ children: ReactNode; onClose: () => void }, { failed: boolean }> {
@@ -16,6 +17,11 @@ class GameLoadBoundary extends Component<{ children: ReactNode; onClose: () => v
 export default function GameLauncher() {
   const [open, setOpen] = useState(false);
   const [round,setRound]=useState(0);
+  useEffect(() => {
+    const launch = () => setOpen(true);
+    window.addEventListener(GAME_LAUNCH_EVENT, launch);
+    return () => window.removeEventListener(GAME_LAUNCH_EVENT, launch);
+  }, []);
   const close = useCallback(() => setOpen(false), []);
   return <>
     <button className="glass-launch" type="button" onClick={() => setOpen(true)} aria-label="Start SMASH" title="SMASH"><svg className="header-link-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" aria-hidden="true"><circle cx="12" cy="12" r="7"/><path d="M12 2v5m0 10v5M2 12h5m10 0h5"/></svg><span className="header-link-label">SMASH</span></button>

@@ -63,6 +63,24 @@ try {
     await f.page.locator('.glass-game').focus();
     await f.page.keyboard.down('x'); await f.page.waitForTimeout(3000); await f.page.keyboard.up('x');
     await finish(f.page);
+    if (mobile) {
+      const input = f.page.locator('#score-nickname');
+      const score = await f.page.locator('.result-game-over strong').textContent();
+      const timeOrigin = await f.page.evaluate(() => performance.timeOrigin);
+      await input.fill('MobileHero');
+      // Emulate keyboard height changes, including Chrome variants that emit
+      // window.resize even when only the visual viewport changes.
+      for (const viewport of [{width:390,height:480},{width:390,height:844},{width:844,height:390},{width:390,height:844}]) {
+        await f.page.setViewportSize(viewport);
+        await f.page.evaluate(() => window.dispatchEvent(new Event('resize')));
+        await f.page.waitForTimeout(100);
+        assert.equal(await input.inputValue(), 'MobileHero');
+        assert.equal(await f.page.locator('.result-game-over strong').textContent(), score);
+      }
+      assert.equal(await f.page.evaluate(() => performance.timeOrigin), timeOrigin);
+      assert.equal(f.counts.sessions, 1);
+      assert.equal(f.counts.runs, 0);
+    }
     await f.page.getByLabel('Submit score · nickname', { exact: true }).fill('  Player-1  ');
     await f.page.getByRole('button', { name: 'Submit score', exact: true }).click();
     await f.page.getByText('Score accepted, but it did not make the top 10.').waitFor();

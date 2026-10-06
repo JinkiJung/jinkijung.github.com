@@ -31,6 +31,9 @@ export default function GameMode({ onClose, onRetry }: { onClose: () => void; on
   const [ready, setReady] = useState(false);
   const [stats, setStats] = useState<Stats>({ lives:2,ended:false,seconds:0,completedAt:"", fps: 0, broken: 0, total: 0, hp: 5, penalty: '', weapon: 'pistol', score: 0, kills: 0, enemies: 4 });
 
+  const showingResults = useRef(false);
+  showingResults.current = stats.ended || !!preview;
+
   // Keep the engine source aligned with the visible checkbox, including hot reloads.
   controls.current.developer=developer;
   controls.current.weapon=weapon;
@@ -93,7 +96,14 @@ export default function GameMode({ onClose, onRetry }: { onClose: () => void; on
       }
     };
     window.addEventListener('keydown', keydown);
-    window.addEventListener('resize', onClose);
+    const capturedWidth = window.innerWidth;
+    const onResize = () => {
+      // Keyboards and browser chrome change viewport height. Results must also
+      // survive rotation: their completed score and submission belong to this mount.
+      if (showingResults.current || window.innerWidth === capturedWidth) return;
+      onClose();
+    };
+    window.addEventListener('resize', onResize);
     const prepare = async () => {
       try {
         // Share the initial read with all homepage tickers and the results panel.
@@ -135,7 +145,7 @@ export default function GameMode({ onClose, onRetry }: { onClose: () => void; on
       animations.forEach(a => a.play());
       document.documentElement.style.overflow = overflow;
       window.removeEventListener('keydown', keydown);
-      window.removeEventListener('resize', onClose);
+      window.removeEventListener('resize', onResize);
       window.removeEventListener('wheel', preventScroll);
       window.removeEventListener('touchmove', preventScroll);
       window.scrollTo({ left: x, top: y, behavior: 'instant' });

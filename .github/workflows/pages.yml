@@ -1,21 +1,21 @@
-name: Deploy dev and v2025 to Pages
+name: Deploy current and archived sites to Pages
 
 on:
   push:
-    branches: [dev, v2025]
+    branches: [dev, v2025, v2021]
   workflow_dispatch:
 
 permissions:
   contents: read
 
-# Both branches publish the same complete site; never race independent deploys.
+# All branches publish the same complete site; never race independent deploys.
 concurrency:
   group: combined-github-pages
   cancel-in-progress: false
 
 jobs:
   build:
-    if: github.ref == 'refs/heads/dev' || github.ref == 'refs/heads/v2025'
+    if: github.ref == 'refs/heads/dev' || github.ref == 'refs/heads/v2025' || github.ref == 'refs/heads/v2021'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -26,6 +26,10 @@ jobs:
         with:
           ref: v2025
           path: archive
+      - uses: actions/checkout@v4
+        with:
+          ref: v2021
+          path: archive2021
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -42,14 +46,17 @@ jobs:
         env:
           BASE_PATH: /v2025
         run: npm ci && npm run build:site
-      - name: Assemble both versions
+      - name: Assemble all versions
         run: |
-          mkdir -p site/v2025
+          mkdir -p site/v2025 site/v2021
           cp -a current/dist/. site/
           cp -a archive/build/. site/v2025/
+          cp archive2021/index.html archive2021/works.html site/v2021/
+          cp -a archive2021/assets archive2021/images site/v2021/
           touch site/.nojekyll
           test -f site/index.html
           test -f site/v2025/index.html
+          test -f site/v2021/index.html
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site

@@ -32,7 +32,7 @@ import type { captureGameWorld } from './stages';
 type Bullet = { x: number; y: number; vx: number; vy: number; life: number; enemy: boolean; bounces: number; trailX: number; trailY: number; damage: number; spike: boolean; selfSafe: number; piercing: boolean; hitMask: Set<number> };
 type Spark = Bullet & { color: string };
 export type GameControls = { developer:boolean; weapon:Weapon; preview:boolean; paused?:boolean; finish?:()=>void; touchInput?: (code:string,down:boolean)=>void };
-export type Stats = { completion?:Completion; lives:number; ended:boolean; seconds:number; completedAt:string; fps: number; broken: number; total: number; hp: number; penalty: string; weapon: Weapon; score: number; kills: number; enemies: number };
+export type Stats = { playerNearTop?:boolean; completion?:Completion; lives:number; ended:boolean; seconds:number; completedAt:string; fps: number; broken: number; total: number; hp: number; penalty: string; weapon: Weapon; score: number; kills: number; enemies: number };
 
 export function startGame(surface: HTMLCanvasElement, actors: HTMLCanvasElement, snapshot: Awaited<ReturnType<typeof captureGameWorld>>, onStats: (stats: Stats) => void, onError: () => void, getControls:()=>GameControls, rankedRun: RankedRun) {
   const { width: w, height: h, viewportHeight: viewH } = snapshot;
@@ -710,7 +710,7 @@ export function startGame(surface: HTMLCanvasElement, actors: HTMLCanvasElement,
     else if (trapped && !playerFalling) drawMovementHint(ctx, player.x, player.y - cameraY - 18, now / 1000, w);
     frames++;
     if (!run.ended && now - lastReport >= 500) {
-      onStats({ lives:run.lives,ended:run.ended,seconds:Math.floor(rankedRun.elapsed),completedAt, fps: Math.round(frames * 1000 / (now - lastReport)), broken: glass.brokenArea, total, hp, penalty: penalty ? PENALTY_LABELS[penalty.kind] : '', weapon: weapons.equipped, score: score.points, kills, enemies: enemies.filter(e => e.hp > 0).length });
+      onStats({ playerNearTop: !playerFalling && (player.y-cameraY) < viewH*.2, lives:run.lives,ended:run.ended,seconds:Math.floor(rankedRun.elapsed),completedAt, fps: Math.round(frames * 1000 / (now - lastReport)), broken: glass.brokenArea, total, hp, penalty: penalty ? PENALTY_LABELS[penalty.kind] : '', weapon: weapons.equipped, score: score.points, kills, enemies: enemies.filter(e => e.hp > 0).length });
       frames = 0; lastReport = now;
     }
     frame = requestAnimationFrame(tick);

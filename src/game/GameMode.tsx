@@ -156,10 +156,10 @@ export default function GameMode({ onClose, onRetry }: { onClose: () => void; on
   return <div className="glass-game" lang="en" tabIndex={-1} role="dialog" aria-modal="true" aria-label="SMASH game" ref={dialog}>
     <canvas ref={surface} className="glass-surface" aria-hidden="true" />
     <canvas ref={actors} className="glass-actors" aria-label="Use WASD or arrow keys to move and aim. Press X to fire forward and Z for melee." />
-    <div className="glass-topbar glass-hud">
+    <div className={`glass-topbar glass-hud${ready && !paused && !stats.ended && !preview && stats.playerNearTop ? ' is-near-player' : ''}`}>
       <div className="glass-hud-title"><span>SMASH Jinki</span><strong aria-label="Score">{String(stats.score).padStart(8,'0')}</strong></div>
       <div className="glass-hud-lives" aria-label={developer?'Unlimited lives':`${stats.lives} lives remaining`}><svg viewBox="0 0 16 14" aria-hidden="true"><path d="M2 0h4v2h4V0h4v2h2v6h-2v2h-2v2h-2v2H6v-2H4v-2H2V8H0V2h2Z"/></svg><span>× {developer?'∞':String(stats.lives).padStart(2,'0')}</span></div>
-      <div className="glass-hud-progress"><span>SMASHED</span><strong>{stats.total?Math.round(stats.broken/stats.total*100):0}%</strong></div>
+      <div className="glass-hud-progress" aria-label="Page smashed"><span>SMASHED</span><strong>{stats.total?Math.round(stats.broken/stats.total*100):0}%</strong></div>
       <button ref={close} className="glass-pause-trigger" aria-label={ready?'Pause game':'Exit game'} title={ready?'Pause':'Exit'} disabled={stats.ended || !!preview} onClick={ready?pause:onClose}><svg viewBox="0 0 24 24" aria-hidden="true">{ready?<path d="M6 4h4v16H6zM14 4h4v16h-4z"/>:<path d="m6 4 6 6 6-6 2 2-6 6 6 6-2 2-6-6-6 6-2-2 6-6-6-6Z"/>}</svg></button>
     </div>
     {paused && !stats.ended && !preview && <div className="glass-results-backdrop"><section className="glass-results glass-pause" role="dialog" aria-modal="true" aria-labelledby="pause-title">

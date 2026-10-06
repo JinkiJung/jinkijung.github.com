@@ -5,11 +5,8 @@ import App from "./App";
 
 export const PAGE_ARCHIVES = [
   { years: "2025 – 2026", url: "https://jinkijung.github.io/v2025/" },
-  { years: "2022 – 2024", url: "https://jinkijung.github.io/v2022/" },
-  { years: "2018 – 2021", url: "https://jinkijung.github.io/v2018/" },
-  { years: "2013 – 2017", url: "https://jinkijung.github.io/v2013/" },
-  { years: "2008 – 2012", url: "https://jinkijung.github.io/v2008/" },
-  { years: "2003 – 2007", url: "https://jinkijung.github.io/v2003/" },
+  { years: "2021 – 2024", url: "https://jinkijung.github.io/v2021/" },
+  { years: "2018 – 2020", url: "https://jinkijung.github.io/v2018/" },
 ];
 
 export const PAGE_SLIDES = [

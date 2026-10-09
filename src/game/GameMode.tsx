@@ -20,7 +20,8 @@ export default function GameMode({ onClose, onRetry }: { onClose: () => void; on
   const controls=useRef<GameControls>({developer:false,weapon:'pistol',preview:false});
   const ranked = useRef<RankedRun | null>(null);
   const [paused,setPaused]=useState(false);
-  const resume=()=>{controls.current.paused=false;setPaused(false);dialog.current?.focus({preventScroll:true});};
+  const [editingControls,setEditingControls]=useState(false);
+  const resume=()=>{setEditingControls(false);controls.current.paused=false;setPaused(false);dialog.current?.focus({preventScroll:true});};
   const pause=()=>{controls.current.paused=true;setPaused(true);};
   const [failed, setFailed] = useState(false);
   const [developer,setDeveloper]=useState(false);
@@ -162,9 +163,10 @@ export default function GameMode({ onClose, onRetry }: { onClose: () => void; on
       <div className="glass-hud-progress" aria-label="Page smashed"><span>SMASHED</span><strong>{stats.total?Math.round(stats.broken/stats.total*100):0}%</strong></div>
       <button ref={close} className="glass-pause-trigger" aria-label={ready?'Pause game':'Exit game'} title={ready?'Pause':'Exit'} disabled={stats.ended || !!preview} onClick={ready?pause:onClose}><svg viewBox="0 0 24 24" aria-hidden="true">{ready?<path d="M6 4h4v16H6zM14 4h4v16h-4z"/>:<path d="m6 4 6 6 6-6 2 2-6 6 6 6-2 2-6-6-6 6-2-2 6-6-6-6Z"/>}</svg></button>
     </div>
-    {paused && !stats.ended && !preview && <div className="glass-results-backdrop"><section className="glass-results glass-pause" role="dialog" aria-modal="true" aria-labelledby="pause-title">
+    {paused && !editingControls && !stats.ended && !preview && <div className="glass-results-backdrop"><section className="glass-results glass-pause" role="dialog" aria-modal="true" aria-labelledby="pause-title">
       <header className="glass-window-header"><h2 id="pause-title">Paused</h2><button autoFocus aria-label="Resume game" title="Resume game" onClick={resume}>×</button></header>
       <div className="glass-pause-actions"><button onClick={onClose}>Exit game</button><button onClick={onRetry}>Restart</button></div>
+      <button className="glass-edit-controls" onClick={()=>setEditingControls(true)}>Edit controls</button>
       <button className="glass-finish-run" onClick={()=>{resume();controls.current.finish?.();}}>Finish run &amp; view score</button>
       {developerUnlocked && <div className="glass-dev-options">
       <div className="glass-developer"><label><input type="checkbox" checked={developer} disabled={stats.ended || !!preview} onChange={e=>{const checked=e.currentTarget.checked;controls.current.developer=checked;if(checked)ranked.current?.markDeveloper();setDeveloper(checked);dialog.current?.focus();}}/> Developer mode</label>
@@ -175,8 +177,8 @@ export default function GameMode({ onClose, onRetry }: { onClose: () => void; on
       </div>}
     </section></div>}
     {!ready && <div className="glass-loading" role="status"><span className="glass-loading-mark" aria-hidden="true" /><p>{status}</p>{failed && <button onClick={onRetry}>Try again</button>}</div>}
+    {ready && (!paused || editingControls) && !stats.ended && !preview && <TouchControls key={editingControls?'edit':'play'} editing={editingControls} onDone={()=>setEditingControls(false)} onInput={(code,down)=>{if(!editingControls)controls.current.touchInput?.(code,down);}} />}
     {ready && !paused && !stats.ended && !preview && <>
-      <TouchControls onInput={(code,down)=>controls.current.touchInput?.(code,down)} />
       <div className="glass-help"><span><kbd>W A S D</kbd> / <kbd>↑ ↓ ← →</kbd> Move · aim</span><span><kbd>X</kbd> Fire · hold for rapid fire</span><span><kbd>Z</kbd> Melee</span><span className="glass-fps">{stats.fps || '—'} FPS · WEBGL</span></div>
       {glassComplete({totalGlassArea:stats.total,destroyedGlassArea:stats.broken}) && <div className="glass-complete" role="status">PAGE CLEARED <span>All glass shattered. Text still provides cover.</span></div>}
     </>}

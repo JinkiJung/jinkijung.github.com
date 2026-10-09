@@ -143,3 +143,14 @@
 @media (prefers-reduced-motion:reduce) {
   .glass-topbar.glass-hud,.glass-hud-title,.glass-hud-lives,.glass-hud-progress{transition:none}
 }
+
+/* Separate draggable controls share fixed action-button dimensions. */
+.glass-touch-controls .glass-control-slot{position:absolute;transform:translate(-50%,-50%);right:auto;bottom:auto;display:block;pointer-events:auto;touch-action:none}
+.glass-control-slot .glass-touch-stick{position:relative;left:auto;bottom:auto;width:var(--control-size);height:var(--control-size);box-sizing:border-box}
+.glass-control-slot.glass-touch-actions .glass-touch-key{width:var(--control-size);height:var(--control-size);box-sizing:border-box;flex:none}
+.glass-edit-controls{display:none;width:100%;margin-top:12px;padding:14px}
+@media(max-width:650px),(any-pointer:coarse){.glass-edit-controls{display:block}}
+.glass-touch-controls.is-editing{display:block;z-index:5;background:#06140e77}
+.is-editing .glass-control-slot{outline:2px dashed #a6efd7;outline-offset:6px;border-radius:50%;cursor:grab}
+.glass-control-editor{position:absolute;top:max(65px,env(safe-area-inset-top));left:50%;transform:translateX(-50%);width:min(360px,calc(100% - 24px));box-sizing:border-box;padding:12px;background:#0c211bf2;border:1px solid #8cea8a;pointer-events:auto;text-align:center;font-size:12px}
+.glass-control-editor p{margin:6px 0 10px}.glass-control-editor>div{display:flex;gap:8px}.glass-control-editor button{flex:1;min-height:44px;background:#1c4736;border:1px solid #639c80;color:#e3ffec}.glass-control-editor small{display:block;margin-top:8px}
